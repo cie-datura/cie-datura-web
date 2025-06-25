@@ -1,103 +1,128 @@
-import Image from "next/image";
+import ScrollButton from "./components/ScrollButton";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <main className="min-h-screen">
+      {/* Section Héro avec vidéo */}
+      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+        {/* Vidéo de fond */}
+        <video
+          autoPlay
+          muted
+          loop
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="/video-background.mp4" type="video/mp4" />
+          {/* Fallback image si la vidéo ne charge pas */}
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-900 to-purple-900" />
+        </video>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+        {/* Overlay sombre */}
+        <div className="absolute inset-0 bg-black/40" />
+
+        {/* Contenu centré */}
+        <div className="relative z-10 text-center text-white px-4 pb-20">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in">
+            Compagnie Datura
+          </h1>
+          <p className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto animate-fade-in-delay">
+            Découvrez notre univers artistique
+          </p>
+
+          {/* Call to action */}
+          <ScrollButton
+            targetId="presentation"
+            className="bg-white text-black px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition-all duration-300 animate-bounce"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            Découvrir plus ↓
+          </ScrollButton>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </section>
+
+      {/* Section Présentation */}
+      <section id="presentation" className="py-20 px-4">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-4xl font-bold text-center mb-12 text-white">
+            À propos de nous
+          </h2>
+
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            {/* Texte de présentation */}
+            <div className="space-y-6">
+              <p className="text-lg text-gray-300 leading-relaxed">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Quisquam, quos.
+              </p>
+              <p className="text-lg text-gray-300 leading-relaxed">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Quisquam, quos. Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. Quisquam, quos. Lorem ipsum dolor sit amet
+                consectetur adipisicing elit. Quisquam, quos. Lorem ipsum dolor
+                sit amet consectetur adipisicing elit. Quisquam, quos. Lorem
+                ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
+                quos. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Quisquam, quos. Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. Quisquam, quos.
+              </p>
+            </div>
+
+            {/* PDF téléchargeable avec animation */}
+            <div className="flex justify-center">
+              <div className="group relative">
+                <div className="bg-gradient-to-br from-slate-800 to-slate-900 p-10 rounded-lg shadow-xl transform group-hover:scale-[1.02] transition-all duration-400 border border-slate-600/30 relative z-20">
+                  <div className="text-center text-white">
+                    <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center group-hover:from-blue-400 group-hover:to-purple-500 transition-all duration-400">
+                      <svg
+                        className="w-8 h-8 text-white"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                        />
+                      </svg>
+                    </div>
+                    <h3 className="text-xl font-medium mb-3 text-gray-100">
+                      Dossier de présentation
+                    </h3>
+                    <p className="text-sm text-gray-400 mb-8 max-w-xs">
+                      Téléchargez notre dossier complet pour découvrir notre
+                      univers artistique
+                    </p>
+                    <a
+                      href="/dossier-presentation.pdf"
+                      download
+                      className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 shadow-lg hover:shadow-xl cursor-pointer relative z-30"
+                    >
+                      <svg
+                        className="w-4 h-4"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+                        />
+                      </svg>
+                      Télécharger
+                    </a>
+                  </div>
+                </div>
+
+                {/* Effet de glow subtil */}
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-lg blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-10" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
   );
 }

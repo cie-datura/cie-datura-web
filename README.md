@@ -1,4 +1,96 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Cie Datura - Landing Page
+
+Une landing page moderne pour la Compagnie Datura avec une section héro avec vidéo et une section présentation avec PDF téléchargeable.
+
+## Fonctionnalités
+
+- **Section Héro** : Vidéo de fond automatique avec titre et call-to-action
+- **Section Présentation** : Texte de présentation avec PDF téléchargeable animé
+- **Animations** : Effets d'apparition et animations au hover
+- **Design responsive** : Optimisé pour mobile et desktop
+
+## Ressources nécessaires
+
+Pour que la landing page fonctionne correctement, vous devez ajouter les fichiers suivants dans le dossier `public/` :
+
+### 1. Vidéo de fond
+
+- **Fichier** : `public/video-background.mp4`
+- **Description** : Vidéo qui se lance automatiquement en arrière-plan de la section héro
+- **Format recommandé** : MP4, résolution 1920x1080 ou supérieure
+- **Taille recommandée** : < 10MB pour un chargement rapide
+
+### 2. PDF de présentation
+
+- **Fichier** : `public/dossier-presentation.pdf`
+- **Description** : Dossier de présentation de la compagnie téléchargeable
+- **Contenu suggéré** :
+  - Présentation de la compagnie
+  - Spectacles et créations
+  - Équipe artistique
+  - Contact et informations pratiques
+
+## Installation et lancement
+
+```bash
+# Installer les dépendances
+npm install
+
+# Lancer en mode développement
+npm run dev
+
+# Construire pour la production
+npm run build
+
+# Lancer en production
+npm start
+```
+
+## Personnalisation
+
+### Couleurs
+
+Les couleurs principales utilisées sont :
+
+- **Violet/bleu** : `from-purple-600 to-blue-600` pour le gradient du PDF
+- **Blanc** : Pour le texte et les boutons
+- **Noir transparent** : `bg-black/40` pour l'overlay de la vidéo
+
+### Animations
+
+Les animations sont définies dans `app/globals.css` :
+
+- `animate-fade-in` : Apparition du titre
+- `animate-fade-in-delay` : Apparition du sous-titre avec délai
+- `animate-bounce` : Animation du bouton call-to-action
+
+### Texte
+
+Modifiez le contenu dans `app/page.tsx` :
+
+- Titre principal : "Cie Datura"
+- Sous-titre : "Découvrez notre univers artistique unique"
+- Texte de présentation dans la section "À propos de nous"
+
+## Structure des fichiers
+
+```
+app/
+├── page.tsx          # Page principale
+├── globals.css       # Styles et animations
+└── layout.tsx        # Layout global
+
+public/
+├── video-background.mp4      # Vidéo de fond (à ajouter)
+└── dossier-presentation.pdf  # PDF téléchargeable (à ajouter)
+```
+
+## Technologies utilisées
+
+- **Next.js 15** : Framework React
+- **Tailwind CSS 4** : Framework CSS utilitaire
+- **TypeScript** : Typage statique
+- **HTML5 Video** : Lecture vidéo native
 
 ## Getting Started
 
