@@ -1,5 +1,14 @@
 @import "tailwindcss";
 
+/* Déclaration de la police personnalisée */
+@font-face {
+  font-family: 'CocogoosePro-Light';
+  src: url('/fonts/Cocogoose/Zetafonts - CocogoosePro-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --background: #16161d;
   --foreground: #ffffff;
@@ -83,4 +92,11 @@ body {
 /* Effet de shadow 3D pour le hover */
 .hover\:shadow-3xl:hover {
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+/* Police personnalisée pour le titre principal */
+.title-font {
+  font-family: 'CocogoosePro-Light', 'Arial', sans-serif;
+  font-weight: 300;
+  letter-spacing: -0.02em;
 }

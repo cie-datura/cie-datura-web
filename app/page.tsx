@@ -1,5 +1,9 @@
 import ScrollButton from "./components/ScrollButton";
 
+// Constantes pour les fichiers statiques
+const DOSSIER_PRESENTATION_PATH = "/utils/dossier-presentation.pdf";
+const VIDEO_BACKGROUND_PATH = "/utils/video-background.mp4";
+
 export default function Home() {
   return (
     <main className="min-h-screen">
@@ -12,7 +16,7 @@ export default function Home() {
           loop
           className="absolute inset-0 w-full h-full object-cover"
         >
-          <source src="/video-background.mp4" type="video/mp4" />
+          <source src={VIDEO_BACKGROUND_PATH} type="video/mp4" />
           {/* Fallback image si la vidéo ne charge pas */}
           <div className="absolute inset-0 bg-gradient-to-br from-blue-900 to-purple-900" />
         </video>
@@ -22,8 +26,8 @@ export default function Home() {
 
         {/* Contenu centré */}
         <div className="relative z-10 text-center text-white px-4 pb-20">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in">
-            Compagnie Datura
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in title-font">
+            Compagnie DATURA
           </h1>
           <p className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto animate-fade-in-delay">
             Découvrez notre univers artistique
@@ -94,7 +98,7 @@ export default function Home() {
                       univers artistique
                     </p>
                     <a
-                      href="/dossier-presentation.pdf"
+                      href={DOSSIER_PRESENTATION_PATH}
                       download
                       className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 shadow-lg hover:shadow-xl cursor-pointer relative z-30"
                     >
