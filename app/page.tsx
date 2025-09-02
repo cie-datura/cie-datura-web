@@ -54,19 +54,20 @@ export default function Home() {
             {/* Texte de présentation */}
             <div className="space-y-6">
               <p className="text-lg text-gray-300 leading-relaxed">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Quisquam, quos.
-              </p>
-              <p className="text-lg text-gray-300 leading-relaxed">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Quisquam, quos. Lorem ipsum dolor sit amet consectetur
-                adipisicing elit. Quisquam, quos. Lorem ipsum dolor sit amet
-                consectetur adipisicing elit. Quisquam, quos. Lorem ipsum dolor
-                sit amet consectetur adipisicing elit. Quisquam, quos. Lorem
-                ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
-                quos. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Quisquam, quos. Lorem ipsum dolor sit amet consectetur
-                adipisicing elit. Quisquam, quos.
+                L’équipe artistique à l’initiative du projet est originaire
+                d’Albi, dans le Sud-Ouest de la France, proche de Toulouse. Tous
+                nés en 1993, c’est à Albi que nous nous sommes rencontrés, ici
+                aussi que sont nées nos vocations respectives. Nous sommes
+                soudés par une amitié ancienne et fidèle, une admiration
+                mutuelle pour nos parcours artistiques, un regard critique sur
+                la place de l’art dans la société et aujourd’hui par ce projet
+                que nous portons avons beaucoup de passion et de conviction. De
+                quatre membres fondateurs, la compagnie recrute progressivement
+                une directrice musicale, une scénographe, puis auditionne les
+                chanteurs solistes et deux danseuses. En parallèle, nous
+                structurons notre administration en collaborant avec SO
+                Production, experts dans la gestion de projet culturel. La
+                compagnie Datura est née.
               </p>
             </div>
 
