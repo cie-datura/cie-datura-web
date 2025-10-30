@@ -1,3 +1,6 @@
+"use client";
+
+import { useState, useEffect } from "react";
 import ScrollButton from "./components/ScrollButton";
 
 // Constantes pour les fichiers statiques
@@ -5,6 +8,18 @@ const DOSSIER_PRESENTATION_PATH = "/utils/dossier-presentation.pdf";
 const YOUTUBE_VIDEO_ID = "Bxei_qK6ntc";
 
 export default function Home() {
+  const [showEndScreen, setShowEndScreen] = useState(false);
+
+  useEffect(() => {
+    // Simuler la fin de vidéo après 30 secondes pour démonstration
+    // En production, vous pourriez utiliser l'API YouTube pour détecter la vraie fin
+    const timer = setTimeout(() => {
+      setShowEndScreen(true);
+    }, 30000); // 30 secondes
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <main className="min-h-screen">
       {/* Section Héro avec vidéo */}
