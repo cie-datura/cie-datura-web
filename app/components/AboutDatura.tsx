@@ -38,8 +38,8 @@ export default function AboutDatura() {
             Timothée Hudrisier (musique). Animé·e·s par une vision commune :
             questionner la place de l’art dans la société et briser les clichés
             de l’art lyrique, ils·elles s’entourent d’artistes expérimenté·e·s
-            pour imaginer un opéra accessible à un nouveau public. Leur première
-            création, Lakmé, voit le jour au Théâtre municipal d’Albi en mai
+            pour imaginer un opéra accessible à un nouveau public.<br/>
+            Leur première création, <b>Lakmé</b>, voit le jour au Théâtre municipal d’Albi en mai
             2025.
           </p>
         </div>

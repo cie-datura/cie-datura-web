@@ -139,21 +139,31 @@
     box-shadow: 0 0 0 3px var(--cream), 0 0 0 4px var(--navy);
   }
 
-  /* ----- Credits (3 colonnes) ----- */
-  .credits {
-    display: grid; gap: 2rem 3rem;
-    grid-template-columns: repeat(3, minmax(200px,1fr));
-    color: var(--navy);
-  }
-  .credits h4 {
-    color: var(--mustard);
-    text-transform: uppercase; letter-spacing: .08em;
-    margin: 0 0 .5rem;
-  }
-  .credits ul { list-style: none; padding: 0; margin: 0; }
-  .credits li { line-height: 1.4; }
+  /* ----- Credits ----- */
+.credits{
+  display: grid;
+  gap: 1.5rem 2rem;              /* a bit tighter on mobile */
+  grid-template-columns: 1fr;    /* 1 col on mobile */
+  color: var(--navy);
+  word-wrap: break-word;
+  overflow-wrap: anywhere;       /* avoid overflow on long names */
+}
+@media (min-width: 640px){       /* sm */
+  .credits{ grid-template-columns: repeat(2, minmax(0,1fr)); }
+}
+@media (min-width: 1024px){      /* lg */
+  .credits{ grid-template-columns: repeat(3, minmax(0,1fr)); gap: 2rem 3rem; }
+}
+.credits h4{
+  color: var(--mustard);
+  text-transform: uppercase; letter-spacing: .08em;
+  margin: 0 0 .5rem;
+}
+.credits ul{ list-style: none; padding: 0; margin: 0; }
+.credits li{ line-height: 1.5; }
 
-  /* ----- Dotted rule (séparateur) ----- */
+
+/* ----- Dotted rule (séparateur) ----- */
   .rule-dots {
     --gap: 12px;
     background:

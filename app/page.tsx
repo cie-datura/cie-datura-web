@@ -2,8 +2,7 @@ import ScrollButton from "./components/ScrollButton";
 import OptimizedHeroVideo from "./components/OptimizedHeroVideo";
 import Citations from "./components/Citations";
 import AboutDatura from "./components/AboutDatura";
-// Constantes pour les fichiers statiques
-const DOSSIER_PRESENTATION_PATH = "/utils/dossier-presentation.pdf";
+// const DOSSIER_PRESENTATION_PATH = "/utils/dossier-presentation.pdf";
 
 export default function Home() {
   return (
