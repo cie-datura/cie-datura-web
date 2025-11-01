@@ -25,8 +25,11 @@ export function useIntersectionObserver(
           if (entry.isIntersecting) {
             setIsVisible(true);
             // Si triggerOnce est true, on arrête d'observer après le premier déclenchement
-            if (triggerOnce && elementRef.current) {
-              observer.unobserve(elementRef.current);
+            if (triggerOnce) {
+              const currentElement = elementRef.current;
+              if (currentElement) {
+                observer.unobserve(currentElement);
+              }
             }
           } else if (!triggerOnce) {
             setIsVisible(false);
@@ -39,14 +42,15 @@ export function useIntersectionObserver(
       }
     );
 
-    if (elementRef.current) {
-      observer.observe(elementRef.current);
+    const currentElement = elementRef.current;
+    if (currentElement) {
+      observer.observe(currentElement);
     }
 
     // Cleanup
     return () => {
-      if (elementRef.current) {
-        observer.unobserve(elementRef.current);
+      if (currentElement) {
+        observer.unobserve(currentElement);
       }
     };
   }, [threshold, rootMargin, triggerOnce]);

@@ -20,7 +20,10 @@ export default function OptimizedHeroVideo() {
       ).matches;
 
       // Save data mode
-      const saveData = (navigator as any).connection?.saveData === true;
+      const connection = (
+        navigator as Navigator & { connection?: { saveData?: boolean } }
+      ).connection;
+      const saveData = connection?.saveData === true;
 
       return isMobile || prefersReducedMotion || saveData;
     };
@@ -52,8 +55,9 @@ export default function OptimizedHeroVideo() {
 
     // Cleanup
     return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
+      const currentSection = sectionRef.current;
+      if (currentSection) {
+        observer.unobserve(currentSection);
       }
     };
   }, [shouldLoadVideo]);

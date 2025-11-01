@@ -69,7 +69,7 @@ function CitationCard({ citation, index, isVisible }: CitationCardProps) {
       {/* Citation */}
       <AnimatedElement isVisible={isVisible} delay={baseDelay + 300}>
         <blockquote className="text-lg text-gray-200 leading-relaxed mb-6 italic">
-          "<span className="font-medium">{citation.text}</span>"
+          &ldquo;<span className="font-medium">{citation.text}</span>&rdquo;
         </blockquote>
       </AnimatedElement>
 
