@@ -2,8 +2,9 @@
 
 /* Déclaration de la police personnalisée */
 @font-face {
-  font-family: 'CocogoosePro-Light';
-  src: url('/fonts/Cocogoose/Zetafonts - CocogoosePro-Light.otf') format('opentype');
+  font-family: "CocogoosePro-Light";
+  src: url("/fonts/Cocogoose/Zetafonts - CocogoosePro-Light.otf")
+    format("opentype");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -12,6 +13,8 @@
 :root {
   --background: #16161d;
   --foreground: #ffffff;
+  --backgroundTwo: #E8B82E;
+  --backgroundThree: #092A49;
 }
 
 @theme inline {
@@ -77,6 +80,17 @@ body {
   }
 }
 
+.animate-title-opera {
+  --title-target-spacing: 0.12em;
+  animation: title-opera 1.6s ease-out forwards;
+}
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .animate-title-opera { animation: none !important; }
+}
+
+
+
 .animate-fade-in {
   animation: fadeIn 1s ease-out;
 }
@@ -96,7 +110,30 @@ body {
 
 /* Police personnalisée pour le titre principal */
 .title-font {
-  font-family: 'CocogoosePro-Light', 'Arial', sans-serif;
+  font-family: "CocogoosePro-Light", "Arial", sans-serif;
   font-weight: 300;
-  letter-spacing: -0.02em;
+  /* letter-spacing: -0.02em; */
+  letter-spacing: 0.12em;
 }
+
+@keyframes title-opera {
+  0% {
+    opacity: 0;
+    letter-spacing: 0.40em;  
+    transform: translateY(12px);
+  }
+  100% {
+    opacity: 1;
+    letter-spacing: var(--title-target-spacing, 0.12em);
+    transform: translateY(0);
+  }
+}
+
+/* responsive letter-spacing */
+@media (min-width: 768px) {
+  .title-font { letter-spacing: 0.14em; }
+}
+@media (min-width: 1280px) {
+  .title-font { letter-spacing: 0.16em; }
+}
+

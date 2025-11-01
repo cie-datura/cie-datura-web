@@ -1,63 +1,37 @@
-"use client";
-
-import { useState, useEffect } from "react";
 import ScrollButton from "./components/ScrollButton";
+import OptimizedHeroVideo from "./components/OptimizedHeroVideo";
+import Citations from "./components/Citations";
 
 // Constantes pour les fichiers statiques
 const DOSSIER_PRESENTATION_PATH = "/utils/dossier-presentation.pdf";
-const YOUTUBE_VIDEO_ID = "Bxei_qK6ntc";
 
 export default function Home() {
-  const [showEndScreen, setShowEndScreen] = useState(false);
-
-  useEffect(() => {
-    // Simuler la fin de vidéo après 30 secondes pour démonstration
-    // En production, vous pourriez utiliser l'API YouTube pour détecter la vraie fin
-    const timer = setTimeout(() => {
-      setShowEndScreen(true);
-    }, 30000); // 30 secondes
-
-    return () => clearTimeout(timer);
-  }, []);
-
   return (
     <main className="min-h-screen">
       {/* Section Héro avec vidéo */}
       <section className="relative h-screen flex flex-col justify-between overflow-hidden">
-        {/* Vidéo YouTube de fond */}
-        <iframe
-          src={`https://www.youtube.com/embed/${YOUTUBE_VIDEO_ID}?autoplay=1&mute=1&loop=1&playlist=${YOUTUBE_VIDEO_ID}&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&disablekb=1&fs=0&cc_load_policy=0&playsinline=1&enablejsapi=1`}
-          className="absolute inset-0 w-full h-full object-cover pointer-events-none"
-          style={{
-            width: "100vw",
-            height: "56.25vw", // 16:9 aspect ratio
-            minHeight: "100vh",
-            minWidth: "177.77vh", // 16:9 aspect ratio
-            transform: "translate(-50%, -50%)",
-            top: "50%",
-            left: "50%",
-          }}
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        />
-        {/* Fallback background si YouTube ne charge pas */}
+        {/* Vidéo optimisée de fond */}
+        <OptimizedHeroVideo />
+
+        {/* Fallback background */}
         <div className="absolute inset-0 bg-gradient-to-br from-blue-900 to-purple-900 -z-10" />
 
-        {/* Overlay sombre */}
-        <div className="absolute inset-0 bg-black/40" />
-
         {/* Titre en haut */}
-        <div className="relative z-10 text-center text-white px-4 pt-20">
-          <h1 className="text-5xl md:text-7xl font-bold animate-fade-in title-font">
-            COMPAGNIE DATURA
+        <div className="relative z-20 text-center text-white px-4 pt-20">
+          <h1 className="text-3xl md:text-5xl font-bold animate-fade-in title-font">
+            LA COMPAGNIE DATURA PRÉSENTE
           </h1>
         </div>
 
-        {/* Sous-titre et bouton en bas */}
-        <div className="relative z-10 text-center text-white px-4 pb-20">
-          <h2 className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto animate-fade-in-delay">
-            Découvrez notre univers artistique
+        {/* Titre principal au centre */}
+        <div className="relative z-20 text-center text-white px-4">
+          <h2 className="text-7xl md:text-8xl sm: font-bold animate-fade-in-delay title-font tracking-[50px] animate-title-opera">
+            LAKMÉ
           </h2>
+        </div>
+
+        {/* Sous-titre et bouton en bas */}
+        <div className="relative z-20 text-center text-white px-4 pb-20">
 
           {/* Call to action */}
           <ScrollButton
@@ -70,7 +44,7 @@ export default function Home() {
       </section>
 
       {/* Section Présentation */}
-      <section id="presentation" className="py-20 px-4">
+      <section id="presentation" className="py-20 px-4 bg-(--backgroundThree)">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl font-bold text-center mb-12 text-white">
             À propos de nous
@@ -154,6 +128,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Section Citations */}
+      <Citations />
     </main>
   );
 }
