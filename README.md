@@ -1,38 +1,15 @@
-# Cie Datura - Landing Page
+# Compagnie Datura - Site Web Officiel
 
-Une landing page moderne pour la Compagnie Datura avec une section héro avec vidéo et une section présentation avec PDF téléchargeable.
+Site web moderne et optimisé pour la Compagnie Datura présentant leur production de Lakmé de Léo Delibes.
 
-## Fonctionnalités
 
-- **Section Héro** : Vidéo de fond automatique avec titre et call-to-action
-- **Section Présentation** : Texte de présentation avec PDF téléchargeable animé
-- **Animations** : Effets d'apparition et animations au hover
-- **Design responsive** : Optimisé pour mobile et desktop
-
-## Ressources nécessaires
-
-Pour que la landing page fonctionne correctement, vous devez ajouter les fichiers suivants dans le dossier `public/` :
-
-### 1. Vidéo de fond
-
-- **Fichier** : `public/video-background.mp4`
-- **Description** : Vidéo qui se lance automatiquement en arrière-plan de la section héro
-- **Format recommandé** : MP4, résolution 1920x1080 ou supérieure
-- **Taille recommandée** : < 10MB pour un chargement rapide
-
-### 2. PDF de présentation
-
-- **Fichier** : `public/dossier-presentation.pdf`
-- **Description** : Dossier de présentation de la compagnie téléchargeable
-- **Contenu suggéré** :
-  - Présentation de la compagnie
-  - Spectacles et créations
-  - Équipe artistique
-  - Contact et informations pratiques
-
-## Installation et lancement
+## 🚀 Installation et Développement
 
 ```bash
+# Cloner le repository
+git clone [repository-url]
+cd compagnie-datura
+
 # Installer les dépendances
 npm install
 
@@ -44,17 +21,17 @@ npm run build
 
 # Lancer en production
 npm start
+
+# Linter et formater le code
+npm run lint
+npm run lint:fix
 ```
+
+Ouvrez [http://localhost:3000](http://localhost:3000) pour voir le résultat.
 
 ## Personnalisation
 
 ### Couleurs
-
-Les couleurs principales utilisées sont :
-
-- **Violet/bleu** : `from-purple-600 to-blue-600` pour le gradient du PDF
-- **Blanc** : Pour le texte et les boutons
-- **Noir transparent** : `bg-black/40` pour l'overlay de la vidéo
 
 ### Animations
 
@@ -72,57 +49,93 @@ Modifiez le contenu dans `app/page.tsx` :
 - Sous-titre : "Découvrez notre univers artistique unique"
 - Texte de présentation dans la section "À propos de nous"
 
-## Structure des fichiers
+## 🏗️ Architecture et Personnalisation
+
+### Structure des Composants
 
 ```
 app/
-├── page.tsx          # Page principale
-├── globals.css       # Styles et animations
-└── layout.tsx        # Layout global
+├── components/
+│   ├── OptimizedHeroVideo.tsx   # Vidéo héro optimisée
+│   ├── Citations.tsx            # Section témoignages
+│   ├── YouTubePlayer.tsx        # Player YouTube réutilisable
+│   └── ScrollButton.tsx         # Bouton de navigation
+├── hooks/
+│   └── useIntersectionObserver.ts # Hook pour animations viewport
+├── page.tsx                     # Page principale
+├── globals.css                  # Styles et animations
+└── layout.tsx                   # Layout global
 
 public/
-├── video-background.mp4      # Vidéo de fond (à ajouter)
-└── dossier-presentation.pdf  # PDF téléchargeable (à ajouter)
+└── utils/
+    ├── hero-lakme.webm          # Vidéo principale
+    ├── hero-safari-fallback.mp4 # Fallback vidéo
+    ├── hero-poster.webp         # Image poster
+    └── dossier-presentation.pdf # PDF téléchargeable
 ```
 
-## Technologies utilisées
+### 🛠️ Technologies Utilisées
 
-- **Next.js 15** : Framework React
-- **Tailwind CSS 4** : Framework CSS utilitaire
-- **TypeScript** : Typage statique
-- **HTML5 Video** : Lecture vidéo native
+- **Next.js 15** : Framework React avec App Router
+- **Tailwind CSS 4** : Framework CSS utilitaire moderne
+- **TypeScript** : Typage statique pour robustesse
+- **Intersection Observer API** : Animations au scroll optimisées
+- **HTML5 Video** : Lecture vidéo native optimisée
+- **YouTube Embed API** : Intégration player vidéo
 
-## Getting Started
+## 🎯 Fonctionnalités Avancées
 
-First, run the development server:
+### ⚡ Optimisations Performance
+
+- **Lazy Loading** : Vidéo chargée uniquement au scroll
+- **Responsive Images** : WebP avec fallbacks optimisés
+- **Preload Metadata** : Chargement minimal initial
+- **Intersection Observer** : Animations déclenchées au viewport
+
+### 📱 Adaptabilité
+
+- **Mobile-First** : Design responsive avec breakpoints optimisés
+- **Reduced Motion** : Respect des préférences utilisateur
+- **Save Data** : Mode économie de données supporté
+- **Progressive Enhancement** : Fonctionnement sans JavaScript
+
+### 🎨 Design System
+
+- **Glassmorphism** : Effets de transparence et blur
+- **Micro-interactions** : Animations subtiles au hover
+- **Typography** : Police personnalisée CocogoosePro-Light
+- **Color Palette** : Thème sombre avec accents bleu/violet
+
+## 🚀 Déploiement
+
+### Vercel (Recommandé)
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Connecter à Vercel
+npx vercel
+
+# Ou déployer directement
+npx vercel --prod
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Variables d'Environnement
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Aucune variable d'environnement requise pour le fonctionnement de base.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Optimisations Production
 
-## Learn More
+- **Compression** : Gzip/Brotli automatique
+- **CDN** : Assets servis via CDN Vercel
+- **Caching** : Headers de cache optimisés
+- **Bundle Analysis** : `npm run analyze` pour analyser la taille
 
-To learn more about Next.js, take a look at the following resources:
+## 📚 Ressources Utiles
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Tailwind CSS](https://tailwindcss.com/docs)
+- [Intersection Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API)
+- [Web Performance Best Practices](https://web.dev/performance/)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📄 Licence
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Ce projet est développé pour la Compagnie Datura. Tous droits réservés.

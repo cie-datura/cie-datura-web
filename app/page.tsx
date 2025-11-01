@@ -6,14 +6,14 @@ import AboutDatura from "./components/AboutDatura";
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen ">
       {/* Section Héro avec vidéo */}
       <section className="relative h-screen flex flex-col justify-between overflow-hidden">
         {/* Vidéo optimisée de fond */}
         <OptimizedHeroVideo />
 
         {/* Fallback background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-900 to-purple-900 -z-10" />
+        <div className="absolute inset-0 bg-(--mustard) -z-10" />
 
         {/* Titre en haut */}
         <div className="relative z-20 text-center text-white px-4 pt-20">
@@ -31,7 +31,6 @@ export default function Home() {
 
         {/* Sous-titre et bouton en bas */}
         <div className="relative z-20 text-center text-white px-4 pb-20">
-
           {/* Call to action */}
           <ScrollButton
             targetId="presentation"
@@ -44,7 +43,7 @@ export default function Home() {
 
       {/* Section Présentation */}
       <section id="presentation">
-          <AboutDatura/>
+        <AboutDatura />
       </section>
 
       {/* Section Citations */}
