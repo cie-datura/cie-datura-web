@@ -98,7 +98,7 @@ export default function Citations() {
   });
 
   return (
-    <section ref={elementRef} className="py-20 px-4 bg-(--backgroundTwo)">
+    <section ref={elementRef} className="py-20 px-4 bg-(--mustard)">
       <div className="max-w-6xl mx-auto">
         <AnimatedElement
           isVisible={isVisible}

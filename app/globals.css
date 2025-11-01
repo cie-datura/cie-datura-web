@@ -1,139 +1,172 @@
 @import "tailwindcss";
 
-/* Déclaration de la police personnalisée */
-@font-face {
-  font-family: "CocogoosePro-Light";
-  src: url("/fonts/Cocogoose/Zetafonts - CocogoosePro-Light.otf")
-    format("opentype");
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
+/* ========= BASE ========= */
+@layer base {
+  /* Police personnalisée */
+  @font-face {
+    font-family: "CocogoosePro-Light";
+    src: url("/fonts/Cocogoose/Zetafonts - CocogoosePro-Light.otf") format("opentype");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+  }
 
-:root {
-  --background: #16161d;
-  --foreground: #ffffff;
-  --backgroundTwo: #E8B82E;
-  --backgroundThree: #092A49;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
   :root {
     --background: #16161d;
     --foreground: #ffffff;
+    --mustard: #E8B82E;
+    --navy: #242E64;
+    --cream: #FDF9EE; /* manquait */
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background: #16161d;
+      --foreground: #ffffff;
+    }
+  }
+
+  /* Bridge Tailwind <-> CSS vars (avec @theme inline) */
+  @theme inline {
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --font-sans: var(--font-geist-sans);
+    --font-mono: var(--font-geist-mono);
+  }
+
+  /* Body par défaut via Tailwind tokens */
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  /* Titre avec la police custom */
+  .title-font {
+    font-family: "CocogoosePro-Light", Arial, sans-serif;
+    font-weight: 300;
+    letter-spacing: 0.12em;
+  }
+
+  /* Responsive letter-spacing */
+  @media (min-width: 768px) { .title-font { letter-spacing: 0.14em; } }
+  @media (min-width: 1280px){ .title-font { letter-spacing: 0.16em; } }
+}
+
+/* ========= KEYFRAMES ========= */
+@layer base {
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes bounce {
+    0%,20%,53%,80%,100% { transform: translate3d(0,0,0); }
+    40%,43% { transform: translate3d(0,-8px,0); }
+    70%     { transform: translate3d(0,-4px,0); }
+    90%     { transform: translate3d(0,-2px,0); }
+  }
+
+  @keyframes title-opera {
+    0% {
+      opacity: 0;
+      letter-spacing: 0.40em;
+      transform: translateY(12px);
+    }
+    100% {
+      opacity: 1;
+      letter-spacing: var(--title-target-spacing, 0.12em);
+      transform: translateY(0);
+    }
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-/* Animations personnalisées */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
+/* ========= COMPONENTS ========= */
+@layer components {
+  /* Animations appliquées (respecte reduced motion) */
+  .animate-title-opera {
+    --title-target-spacing: 0.12em;
+    animation: title-opera 1.6s ease-out forwards;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  @media (prefers-reduced-motion: reduce) {
+    .animate-title-opera { animation: none !important; }
+    .animate-fade-in,
+    .animate-fade-in-delay,
+    .animate-bounce { animation: none !important; }
   }
-}
 
-@keyframes fadeInDelay {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
+  .animate-fade-in { animation: fadeIn 1s ease-out both; }
+  .animate-fade-in-delay { animation: fadeIn 1s ease-out 0.3s both; }
+  .animate-bounce { animation: bounce 2s infinite; }
+
+  /* Effet de shadow 3D pour le hover */
+  .hover\:shadow-3xl:hover {
+    box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+
+  /* ----- L bracket (angle) ----- */
+  .corner-l {
+    position: relative; width: 64px; height: 64px;
   }
-}
-
-@keyframes bounce {
-  0%,
-  20%,
-  53%,
-  80%,
-  100% {
-    transform: translate3d(0, 0, 0);
+  .corner-l::before,
+  .corner-l::after {
+    content: ""; position: absolute; background: var(--navy);
   }
-  40%,
-  43% {
-    transform: translate3d(0, -8px, 0);
+  .corner-l::before { left: 0; top: 0; height: 6px; width: 52px; }
+  .corner-l::after  { left: 0; top: 0; width: 6px; height: 52px; }
+
+  /* ----- Chevrons (>>>>) ----- */
+  .chevrons { display: inline-flex; gap: 10px; }
+  .chevrons .chevron {
+    width: 12px; height: 12px;
+    border-right: 4px solid var(--cream);
+    border-bottom: 4px solid var(--cream);
+    transform: rotate(-45deg);
+    display: block;
   }
-  70% {
-    transform: translate3d(0, -4px, 0);
+
+  /* ----- Dot-matrix ornament ----- */
+  .dot-matrix {
+    background: radial-gradient(var(--cream) 2px, transparent 3px) 0 0/20px 20px;
   }
-  90% {
-    transform: translate3d(0, -2px, 0);
+
+
+  /* ----- Portrait placeholder ----- */
+  .portrait {
+    width: 96px; aspect-ratio: 1/1; border-radius: 50%;
+    display: block; overflow: hidden;
+    background: linear-gradient(180deg, rgba(0,0,0,.08), rgba(0,0,0,.02));
+    box-shadow: 0 0 0 3px var(--cream), 0 0 0 4px var(--navy);
   }
-}
 
-.animate-title-opera {
-  --title-target-spacing: 0.12em;
-  animation: title-opera 1.6s ease-out forwards;
-}
-/* Respect reduced motion */
-@media (prefers-reduced-motion: reduce) {
-  .animate-title-opera { animation: none !important; }
-}
-
-
-
-.animate-fade-in {
-  animation: fadeIn 1s ease-out;
-}
-
-.animate-fade-in-delay {
-  animation: fadeInDelay 1s ease-out 0.3s both;
-}
-
-.animate-bounce {
-  animation: bounce 2s infinite;
-}
-
-/* Effet de shadow 3D pour le hover */
-.hover\:shadow-3xl:hover {
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-}
-
-/* Police personnalisée pour le titre principal */
-.title-font {
-  font-family: "CocogoosePro-Light", "Arial", sans-serif;
-  font-weight: 300;
-  /* letter-spacing: -0.02em; */
-  letter-spacing: 0.12em;
-}
-
-@keyframes title-opera {
-  0% {
-    opacity: 0;
-    letter-spacing: 0.40em;  
-    transform: translateY(12px);
+  /* ----- Credits (3 colonnes) ----- */
+  .credits {
+    display: grid; gap: 2rem 3rem;
+    grid-template-columns: repeat(3, minmax(200px,1fr));
+    color: var(--navy);
   }
-  100% {
-    opacity: 1;
-    letter-spacing: var(--title-target-spacing, 0.12em);
-    transform: translateY(0);
+  .credits h4 {
+    color: var(--mustard);
+    text-transform: uppercase; letter-spacing: .08em;
+    margin: 0 0 .5rem;
+  }
+  .credits ul { list-style: none; padding: 0; margin: 0; }
+  .credits li { line-height: 1.4; }
+
+  /* ----- Dotted rule (séparateur) ----- */
+  .rule-dots {
+    --gap: 12px;
+    background:
+      radial-gradient(var(--navy) .9px, transparent 1px)
+      left bottom/var(--gap) var(--gap) repeat-x;
+    height: 12px; width: 100%; opacity: .3;
   }
 }
 
-/* responsive letter-spacing */
-@media (min-width: 768px) {
-  .title-font { letter-spacing: 0.14em; }
+/* ========= UTILITIES ========= */
+@layer utilities {
+  .bg-mustard   { background: var(--mustard); }
+  .text-navy    { color: var(--navy); }
+  .bg-cream     { background: var(--cream); }
+  .text-mustard { color: var(--mustard); }
 }
-@media (min-width: 1280px) {
-  .title-font { letter-spacing: 0.16em; }
-}
-
