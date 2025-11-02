@@ -2,7 +2,7 @@ import ScrollButton from "./components/ScrollButton";
 import OptimizedHeroVideo from "./components/OptimizedHeroVideo";
 import Citations from "./components/Citations";
 import AboutDatura from "./components/AboutDatura";
-import YouTubePlayer from "./components/YouTubePlayer";
+// import YouTubePlayer from "./components/YouTubePlayer";
 // const DOSSIER_PRESENTATION_PATH = "/utils/dossier-presentation.pdf";
 
 export default function Home() {
@@ -35,7 +35,7 @@ export default function Home() {
           {/* Call to action */}
           <ScrollButton
             targetId="presentation"
-            className="bg-white text-black px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition-all duration-300 animate-bounce"
+            className="bg-white text-black px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 hover:cursor-pointer transition-all duration-300 animate-bounce"
           >
             Découvrir plus ↓
           </ScrollButton>

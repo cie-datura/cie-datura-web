@@ -1,4 +1,7 @@
+import DownloadButton from "./DownloadButton";
+
 export default function AboutDatura() {
+  const hrefDossierPresentation = "/utils/dossier-presentation.pdf";
   const production = {
     plateau: [
       { nom: "MAUD BESSARD-MORANDAS", rôle: "LAKMÉ" },
@@ -123,7 +126,9 @@ export default function AboutDatura() {
                 <p className="mt-2 text-[10px] uppercase tracking-widest font-semibold md:text-[11px]">
                   {membre.nom}
                 </p>
-                <p className="text-[10px] opacity-70 md:text-[11px]">{membre.rôle}</p>
+                <p className="text-[10px] opacity-70 md:text-[11px]">
+                  {membre.rôle}
+                </p>
               </div>
             ))}
           </div>
@@ -192,22 +197,13 @@ export default function AboutDatura() {
           {/* Rule */}
           <div className="rule-dots mt-8" />
 
-          {/* Admin */}
-          {/* <div className="mt-8 grid gap-6 sm:grid-cols-1 text-sm">
-            <div>
-              <h4>Direction Artistique</h4>
-              <ul className="space-y-1">
-                {production.laChefferie.map((membre, i) => (
-                  <li key={i}>
-                    {Array.isArray(membre.nom)
-                      ? membre.nom.join(", ")
-                      : membre.nom}{" "}
-                    — {membre.rôle}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div> */}
+          {/* ================ BOUTON DOWNLOAD DOSSIER DE PRESENTATION ==================== */}
+          <DownloadButton
+            href={hrefDossierPresentation}
+            
+          >
+            Téléchargez notre dossier artistique
+          </DownloadButton>
         </div>
       </section>
     </main>
