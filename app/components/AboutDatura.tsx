@@ -1,77 +1,62 @@
-import YouTubePlayer from "./YouTubePlayer";
 export default function AboutDatura() {
+  const production = {
+    plateau: [
+      { nom: "MAUD BESSARD-MORANDAS", rôle: "LAKMÉ" },
+      { nom: "BASTIEN RIMONDI", rôle: "GÉRALD" },
+      { nom: "MARTIN QUEVAL", rôle: "NILAKANTHA" },
+      { nom: "Pauline Loncelle", rôle: "MALLIKA" },
+      { nom: "PIERRE BARRET-MEMY", rôle: "FRÉDÉRIC" },
+      { nom: "MARILOU ROLLAND", rôle: "MISS ELLEN" },
+      { nom: "MARINE LAFDAL-FRANC", rôle: "MISTRESS BENSON" },
+      { nom: ["EVA HONNINGS", "IRIS BROCCHINI"], rôle: "DANSE" },
+      {
+        nom: [
+          "ANNE MOLINIER",
+          "ANNABANDINI-BELLIN",
+          "LYDIE BALAS",
+          "HAKIMA ZEROUROU",
+          "JULIANEALLOZA",
+          "MATHILDE MAOU",
+          "MAÏWENN GRALL",
+        ],
+        rôle: "ASSOCIATION DENSITÉ",
+      },
+    ],
 
-  const plateau = [
-    {
-      nom: "MAUD BESSARD-MORANDAS",
-      rôle: "LAKMÉ",
-    },
-    {
-      nom: "BASTIEN RIMONDI",
-      rôle: "GÉRALD",
-    },
-    {
-      nom: "MARTIN QUEVAL",
-      rôle: "NILAKANTHA",
-    },
-    {
-      nom: "Pauline Loncelle",
-      rôle: "MALLIKA",
-    },
-    {
-      nom: "PIERRE BARRET-MEMY",
-      rôle: "FRÉDÉRIC",
-    },
-    {
-      nom: "MARILOU ROLLAND",
-      rôle: "MISS ELLEN",
-    },
-    {
-      nom: "MARINE LAFDAL-FRANC",
-      rôle: "MISTRESS BENSON",
-    },
-    {
-      nom: ["EVA HONNINGS", "IRIS BROCCHINI"],
-      rôle: "DANSE",
-    },
-    {
-      nom: [
-        "ANNE MOLINIER",
-        "ANNABANDINI-BELLIN",
-        "LYDIE BALAS",
-        "HAKIMA ZEROUROU",
-        "JULIANEALLOZA",
-        "MATHILDE MAOU",
-        "MAÏWENN GRALL",
-      ],
-      rôle: "ASSOCIATION DENSITÉ",
-    },
-  ];
+    technique: [
+      { nom: "RACHEL TESTARD", rôle: "RÉGIE GÉNÉRALE" },
+      { nom: "ADÈLE ROMIEU", rôle: "RÉGIE PLATEAU" },
+      { nom: "ALEXANDRE SCHREIBER", rôle: "RÉGIE LUMIÈRE" },
+      { nom: "LÉO BELON", rôle: "RÉGIE SURTITRE" },
+      { nom: "CARMEN ESPÉROU", rôle: "MAQUILLAGE" },
+      { nom: "DELPHINE FLEURY", rôle: "COIFFURE" },
+      { nom: "LEVANA TORTOLO", rôle: "STAGIAIRE SCÉNOGRAPHIE" },
+    ],
 
-  const technique = [
-    { nom: "RACHEL TESTARD", rôle: "RÉGIE GÉNÉRALE" },
-    { nom: "ADÈLE ROMIEU", rôle: "RÉGIE PLATEAU" },
-    { nom: "ALEXANDRE SCHREIBER", rôle: "RÉGIE LUMIÈRE" },
-    { nom: "LÉO BELON", rôle: "RÉGIE SURTITRE" },
-    { nom: "CARMEN ESPÉROU", rôle: "MAQUILLAGE" },
-    { nom: "DELPHINE FLEURY", rôle: "COIFFURE" },
-    { nom: "LEVANA TORTOLO", rôle: "STAGIAIRE SCÉNOGRAPHIE" },
-  ];
+    orchestre: [
+      { nom: ["LILYA CHIFMAN", "ROBIN APPARAILLY"], rôle: "VIOLONS" },
+      { nom: "LISA CARDONNET", rôle: "ALTO" },
+      { nom: "ENGUERRAND BONTOUX", rôle: "VIOLONCELLE" },
+      { nom: "MATHILDE BARILLOT", rôle: "CONTREBASSE" },
+      { nom: "PAULINE MORÉTEAU", rôle: "FLÛTE" },
+      { nom: "ELEONORE COURTILLON", rôle: "HAUTBOIS" },
+      { nom: "ROMANE DENIS", rôle: "CLARINETTE" },
+      { nom: "PIERRE-ALEXIS TORRES", rôle: "COR" },
+      { nom: "ANA GENET", rôle: "BASSON" },
+      { nom: "RODOLPHE LOSPIED", rôle: "PIANO" },
+    ],
 
-  const orchestre = [
-    { nom: ["LILYA CHIFMAN", "ROBIN APPARAILLY"], rôle: "VIOLONS" },
-    { nom: "LISA CARDONNET", rôle: "ALTO" },
-    { nom: "ENGUERRAND BONTOUX", rôle: "VIOLONCELLE" },
-    { nom: "MATHILDE BARILLOT", rôle: "CONTREBASSE" },
-    { nom: "PAULINE MORÉTEAU", rôle: "FLÛTE" },
-    { nom: "ELEONORE COURTILLON", rôle: "HAUTBOIS" },
-    { nom: "ROMANE DENIS", rôle: "CLARINETTE" },
-    { nom: "PIERRE-ALEXIS TORRES", rôle: "COR" },
-    { nom: "ANA GENET", rôle: "BASSON" },
-    { nom: "RODOLPHE LOSPIED", rôle: "PIANO" },
-  ];
+    laChefferie: [
+      { nom: "TIMOTHÉE HUDRISIER", rôle: "Directeur Artistique" },
+      { nom: "MATHILDE BELLIN", rôle: "Metteuse en Scène" },
+      { nom: "GUILLEMETTE DABOVAL", rôle: "Directrice Musicale" },
+      { nom: "FRANK GIZYCKI", rôle: "Chorégraphe" },
+      { nom: "ALEXANDRE SCHREIBER", rôle: "Créateur Lumière" },
+      { nom: "RACHEL TESTARD", rôle: "Scénographe" },
+      { nom: "CARMEN ESPÉROU", rôle: "Costumière" },
+    ],
+  };
 
-  //plateau[{nom : string || string[], rôle: string}], technique[{nom: string, rôle: string}], orchestre[{noms: string[], rôle}], admin[{nom, rôle}]
   return (
     <main className="flex flex-col min-h-screen md:grid md:grid-cols-2">
       {/* LEFT PAGE */}
@@ -159,25 +144,40 @@ export default function AboutDatura() {
           <div className="credits mt-8">
             <div>
               <h4>Au plateau</h4>
-              <ul className="space-y-1 text-sm">
-                {Array.from({ length: 8 }).map((_, i) => (
-                  <li key={i}>Lorem ipsum — Dolor</li>
-                ))}
+                {production.plateau.map((membre, i) => (
+              <ul className="space-y-1 text-sm bg-red-200">
+                  <li className="bg-blue-200" key={i}>
+                    {Array.isArray(membre.nom)
+                      ? membre.nom.join(", ")
+                      : membre.nom}{" "}
+                  </li>
+                  <li className="">{membre.rôle}</li>
               </ul>
+                ))}
             </div>
             <div>
               <h4>Orchestre</h4>
               <ul className="space-y-1 text-sm">
-                {Array.from({ length: 8 }).map((_, i) => (
-                  <li key={i}>Consectetur — Adipiscing</li>
+                {production.orchestre.map((membre, i) => (
+                  <li key={i}>
+                    {Array.isArray(membre.nom)
+                      ? membre.nom.join(", ")
+                      : membre.nom}{" "}
+                    — {membre.rôle}
+                  </li>
                 ))}
               </ul>
             </div>
             <div>
               <h4>Technique</h4>
               <ul className="space-y-1 text-sm">
-                {Array.from({ length: 8 }).map((_, i) => (
-                  <li key={i}>Elit — Vitae</li>
+                {production.technique.map((membre, i) => (
+                  <li key={i}>
+                    {Array.isArray(membre.nom)
+                      ? membre.nom.join(", ")
+                      : membre.nom}{" "}
+                    — {membre.rôle}
+                  </li>
                 ))}
               </ul>
             </div>
@@ -187,19 +187,18 @@ export default function AboutDatura() {
           <div className="rule-dots mt-8" />
 
           {/* Admin */}
-          <div className="mt-8 grid gap-6 sm:grid-cols-2 text-sm">
+          <div className="mt-8 grid gap-6 sm:grid-cols-1 text-sm">
             <div>
-              <h4>Administration</h4>
+              <h4>Direction Artistique</h4>
               <ul className="space-y-1">
-                <li>Lorem Ipsum — Production</li>
-                <li>Dolor Sit — Comptable</li>
-              </ul>
-            </div>
-            <div>
-              <h4>Communication</h4>
-              <ul className="space-y-1">
-                <li>Consectetur — Presse</li>
-                <li>Adipiscing — Partenariats</li>
+                {production.laChefferie.map((membre, i) => (
+                  <li key={i}>
+                    {Array.isArray(membre.nom)
+                      ? membre.nom.join(", ")
+                      : membre.nom}{" "}
+                    — {membre.rôle}
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
