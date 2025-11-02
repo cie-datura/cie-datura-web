@@ -117,13 +117,13 @@ export default function AboutDatura() {
         <div className="mx-auto max-w-4xl px-6 pt-16 pb-16 md:px-10 md:pb-24">
           {/* Portraits */}
           <div className="grid grid-cols-3 gap-6 sm:grid-cols-6">
-            {Array.from({ length: 6 }).map((_, i) => (
+            {production.laChefferie.map((membre, i) => (
               <div key={i} className="text-center">
                 <div className="portrait mx-auto" aria-hidden="true" />
                 <p className="mt-2 text-[10px] uppercase tracking-widest font-semibold md:text-[11px]">
-                  Lorem Ipsum
+                  {membre.nom}
                 </p>
-                <p className="text-[10px] opacity-70 md:text-[11px]">Rôle</p>
+                <p className="text-[10px] opacity-70 md:text-[11px]">{membre.rôle}</p>
               </div>
             ))}
           </div>
@@ -144,39 +144,45 @@ export default function AboutDatura() {
           <div className="credits mt-8">
             <div>
               <h4>Au plateau</h4>
+              <ul className="flex flex-col gap-3">
                 {production.plateau.map((membre, i) => (
-              <ul className="space-y-1 text-sm bg-red-200">
-                  <li className="bg-blue-200" key={i}>
-                    {Array.isArray(membre.nom)
-                      ? membre.nom.join(", ")
-                      : membre.nom}{" "}
+                  <li key={i} className="flex flex-col leading-tight list-none">
+                    <span className="font-bold">
+                      {Array.isArray(membre.nom)
+                        ? membre.nom.join(", ")
+                        : membre.nom}
+                    </span>
+                    <span className="text-sm opacity-75">{membre.rôle}</span>
                   </li>
-                  <li className="">{membre.rôle}</li>
-              </ul>
                 ))}
+              </ul>
             </div>
             <div>
               <h4>Orchestre</h4>
-              <ul className="space-y-1 text-sm">
+              <ul className="flex flex-col gap-3">
                 {production.orchestre.map((membre, i) => (
-                  <li key={i}>
-                    {Array.isArray(membre.nom)
-                      ? membre.nom.join(", ")
-                      : membre.nom}{" "}
-                    — {membre.rôle}
+                  <li key={i} className="flex flex-col leading-tight list-none">
+                    <span className="font-bold">
+                      {Array.isArray(membre.nom)
+                        ? membre.nom.join(", ")
+                        : membre.nom}
+                    </span>
+                    <span className="text-sm opacity-75">{membre.rôle}</span>
                   </li>
                 ))}
               </ul>
             </div>
             <div>
               <h4>Technique</h4>
-              <ul className="space-y-1 text-sm">
+              <ul className="flex flex-col gap-3">
                 {production.technique.map((membre, i) => (
-                  <li key={i}>
-                    {Array.isArray(membre.nom)
-                      ? membre.nom.join(", ")
-                      : membre.nom}{" "}
-                    — {membre.rôle}
+                  <li key={i} className="flex flex-col leading-tight list-none">
+                    <span className="font-bold">
+                      {Array.isArray(membre.nom)
+                        ? membre.nom.join(", ")
+                        : membre.nom}
+                    </span>
+                    <span className="text-sm opacity-75">{membre.rôle}</span>
                   </li>
                 ))}
               </ul>
@@ -187,7 +193,7 @@ export default function AboutDatura() {
           <div className="rule-dots mt-8" />
 
           {/* Admin */}
-          <div className="mt-8 grid gap-6 sm:grid-cols-1 text-sm">
+          {/* <div className="mt-8 grid gap-6 sm:grid-cols-1 text-sm">
             <div>
               <h4>Direction Artistique</h4>
               <ul className="space-y-1">
@@ -201,7 +207,7 @@ export default function AboutDatura() {
                 ))}
               </ul>
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
     </main>
