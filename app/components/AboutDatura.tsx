@@ -1,4 +1,77 @@
+import YouTubePlayer from "./YouTubePlayer";
 export default function AboutDatura() {
+
+  const plateau = [
+    {
+      nom: "MAUD BESSARD-MORANDAS",
+      rôle: "LAKMÉ",
+    },
+    {
+      nom: "BASTIEN RIMONDI",
+      rôle: "GÉRALD",
+    },
+    {
+      nom: "MARTIN QUEVAL",
+      rôle: "NILAKANTHA",
+    },
+    {
+      nom: "Pauline Loncelle",
+      rôle: "MALLIKA",
+    },
+    {
+      nom: "PIERRE BARRET-MEMY",
+      rôle: "FRÉDÉRIC",
+    },
+    {
+      nom: "MARILOU ROLLAND",
+      rôle: "MISS ELLEN",
+    },
+    {
+      nom: "MARINE LAFDAL-FRANC",
+      rôle: "MISTRESS BENSON",
+    },
+    {
+      nom: ["EVA HONNINGS", "IRIS BROCCHINI"],
+      rôle: "DANSE",
+    },
+    {
+      nom: [
+        "ANNE MOLINIER",
+        "ANNABANDINI-BELLIN",
+        "LYDIE BALAS",
+        "HAKIMA ZEROUROU",
+        "JULIANEALLOZA",
+        "MATHILDE MAOU",
+        "MAÏWENN GRALL",
+      ],
+      rôle: "ASSOCIATION DENSITÉ",
+    },
+  ];
+
+  const technique = [
+    { nom: "RACHEL TESTARD", rôle: "RÉGIE GÉNÉRALE" },
+    { nom: "ADÈLE ROMIEU", rôle: "RÉGIE PLATEAU" },
+    { nom: "ALEXANDRE SCHREIBER", rôle: "RÉGIE LUMIÈRE" },
+    { nom: "LÉO BELON", rôle: "RÉGIE SURTITRE" },
+    { nom: "CARMEN ESPÉROU", rôle: "MAQUILLAGE" },
+    { nom: "DELPHINE FLEURY", rôle: "COIFFURE" },
+    { nom: "LEVANA TORTOLO", rôle: "STAGIAIRE SCÉNOGRAPHIE" },
+  ];
+
+  const orchestre = [
+    { nom: ["LILYA CHIFMAN", "ROBIN APPARAILLY"], rôle: "VIOLONS" },
+    { nom: "LISA CARDONNET", rôle: "ALTO" },
+    { nom: "ENGUERRAND BONTOUX", rôle: "VIOLONCELLE" },
+    { nom: "MATHILDE BARILLOT", rôle: "CONTREBASSE" },
+    { nom: "PAULINE MORÉTEAU", rôle: "FLÛTE" },
+    { nom: "ELEONORE COURTILLON", rôle: "HAUTBOIS" },
+    { nom: "ROMANE DENIS", rôle: "CLARINETTE" },
+    { nom: "PIERRE-ALEXIS TORRES", rôle: "COR" },
+    { nom: "ANA GENET", rôle: "BASSON" },
+    { nom: "RODOLPHE LOSPIED", rôle: "PIANO" },
+  ];
+
+  //plateau[{nom : string || string[], rôle: string}], technique[{nom: string, rôle: string}], orchestre[{noms: string[], rôle}], admin[{nom, rôle}]
   return (
     <main className="flex flex-col min-h-screen md:grid md:grid-cols-2">
       {/* LEFT PAGE */}
@@ -38,9 +111,10 @@ export default function AboutDatura() {
             Timothée Hudrisier (musique). Animé·e·s par une vision commune :
             questionner la place de l’art dans la société et briser les clichés
             de l’art lyrique, ils·elles s’entourent d’artistes expérimenté·e·s
-            pour imaginer un opéra accessible à un nouveau public.<br/>
-            Leur première création, <b>Lakmé</b>, voit le jour au Théâtre municipal d’Albi en mai
-            2025.
+            pour imaginer un opéra accessible à un nouveau public.
+            <br />
+            Leur première création, <b>Lakmé</b>, voit le jour au Théâtre
+            municipal d’Albi en mai 2025.
           </p>
         </div>
 
@@ -53,6 +127,7 @@ export default function AboutDatura() {
       </section>
 
       {/* RIGHT PAGE */}
+
       <section className="relative bg-cream text-navy flex flex-col">
         <div className="mx-auto max-w-4xl px-6 pt-16 pb-16 md:px-10 md:pb-24">
           {/* Portraits */}

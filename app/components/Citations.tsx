@@ -120,17 +120,12 @@ export default function Citations() {
         </div>
 
         {/* Player YouTube */}
-        <AnimatedElement
-          isVisible={isVisible}
-          delay={800}
-          className="max-w-4xl mx-auto"
-        >
+
           <YouTubePlayer
             videoId="Bxei_qK6ntc"
             title="Découvrez Lakmé en vidéo"
             description="Extrait de notre production de Lakmé de Léo Delibes"
           />
-        </AnimatedElement>
       </div>
     </section>
   );
