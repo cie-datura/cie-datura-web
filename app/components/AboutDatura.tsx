@@ -107,32 +107,42 @@ export default function AboutDatura() {
             </span>
           </h1>
 
-          {/* Heading */}
-          <div className="mt-12 flex items-center gap-4">
-            <div className="chevrons" aria-hidden="true">
-              <span className="chevron" />
-              <span className="chevron" />
-              <span className="chevron" />
-              <span className="chevron" />
+          {/* Heading avec chevrons et paragraphe aligné */}
+          <div className="mt-12">
+            <div className="flex items-center gap-4">
+              <div className="chevrons" aria-hidden="true">
+                <span className="chevron" />
+                <span className="chevron" />
+                <span className="chevron" />
+                <span className="chevron" />
+              </div>
+              <h2 className="uppercase tracking-widest text-[var(--cream)] font-semibold">
+                Origine de la compagnie
+              </h2>
             </div>
-            <h2 className="uppercase tracking-widest text-[var(--cream)] font-semibold">
-              Origine de la compagnie
-            </h2>
+            <p className="mt-4 leading-relaxed max-w-prose text-sm md:text-base">
+              L’équipe artistique à l’initiative du projet est originaire d’Albi
+              dans le Sud-Ouest de la France. Quatre ami·e·s d’enfance uni·e·s
+              par un regard critique sur la place de l’art dans la société, et
+              poursuivant chacun·e une carrière reconnue dans leur domaine
+              respectif : Mathilde Bellin dans le théâtre, Carmen Esperou dans
+              la mode, Frank Gizycki dans la danse et Timothée Hudrisier dans la
+              musique. Ce dernier leur propose de se regrouper{" "}
+              <b className="text-navy">
+                pour imaginer un opéra qui battrait en brèche les clichés et
+                attirer un public nouveau
+              </b>
+              .
+              <br /> <br />
+              La compagnie Datura - du nom de la fleur qui précipite le destin
+              de Lakmé - se structure, s’entoure d’autres artistes
+              expérimenté·e·s et recrute un plateau d’interprètes soudé·e·s par
+              l’envie commune de rompre avec les a priori sur l’art lyrique.
+              <br /> <br />
+              Datura crée sa première production Lakmé au théâtre municipal
+              d’Albi en mai 2025.
+            </p>
           </div>
-
-          {/* Paragraphe */}
-          <p className="mt-4 leading-relaxed max-w-prose text-sm md:text-base">
-            Née à Albi, dans le Sud-Ouest de la France, la compagnie Datura
-            réunit quatre ami·e·s d’enfance aux parcours reconnus — Mathilde
-            Bellin (théâtre), Carmen Esperou (mode), Frank Gizycki (danse) et
-            Timothée Hudrisier (musique). Animé·e·s par une vision commune :
-            questionner la place de l’art dans la société et briser les clichés
-            de l’art lyrique, ils·elles s’entourent d’artistes expérimenté·e·s
-            pour imaginer un opéra accessible à un nouveau public.
-            <br />
-            Leur première création, <b>Lakmé</b>, voit le jour au Théâtre
-            municipal d’Albi en mai 2025.
-          </p>
 
           {/* Dot lié au paragraphe, sans superposition */}
           <div className="mt-30 hidden xl:flex justify-between">

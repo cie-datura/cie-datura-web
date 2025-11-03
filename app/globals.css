@@ -2,7 +2,7 @@
 
 /* ========= BASE ========= */
 @layer base {
-  /* Police personnalisée */
+  /* Polices personnalisées */
   @font-face {
     font-family: "CocogoosePro-Light";
     src: url("/fonts/Cocogoose/Zetafonts - CocogoosePro-Light.otf")
@@ -12,12 +12,54 @@
     font-display: swap;
   }
 
+  /* Dosis Regular */
+  @font-face {
+    font-family: "Dosis";
+    src: url("/fonts/Dosis/Dosis-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  /* Dosis ExtraBold */
+  @font-face {
+    font-family: "Dosis";
+    src: url("/fonts/Dosis/Dosis-ExtraBold.ttf") format("truetype");
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  /* Chosence */
+  @font-face {
+    font-family: "Chosence";
+    src: url("/fonts/Chosence/Chosence.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  /* Avant Garde */
+  @font-face {
+    font-family: "Avant Garde";
+    src: url("/fonts/AvantGarde/AvantGarde.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
   :root {
     --background: #16161d;
     --foreground: #ffffff;
     --mustard: #e8b82e;
     --navy: #242e64;
-    --cream: #ffffff; 
+    --cream: #ffffff;
+
+    /* Font families */
+    --font-cocogoose: "CocogoosePro-Light", Arial, sans-serif;
+    --font-dosis: "Dosis", sans-serif;
+    --font-chosence: "Chosence", sans-serif;
+    --font-avant-garde: "Avant Garde", sans-serif;
   }
 
   @media (prefers-color-scheme: dark) {
@@ -33,6 +75,10 @@
     --color-foreground: var(--foreground);
     --font-sans: var(--font-geist-sans);
     --font-mono: var(--font-geist-mono);
+    --font-cocogoose: var(--font-cocogoose);
+    --font-dosis: var(--font-dosis);
+    --font-chosence: var(--font-chosence);
+    --font-avant-garde: var(--font-avant-garde);
   }
 
   /* Body par défaut via Tailwind tokens */
@@ -42,11 +88,29 @@
     font-family: Arial, Helvetica, sans-serif;
   }
 
-  /* Titre avec la police custom */
-  .title-font {
-    font-family: "CocogoosePro-Light", Arial, sans-serif;
+  /* Classes de polices personnalisées */
+  .title-font,
+  .font-cocogoose {
+    font-family: var(--font-cocogoose);
     font-weight: 300;
     letter-spacing: 0.1em;
+  }
+
+  .font-dosis {
+    font-family: var(--font-dosis);
+  }
+
+  .font-dosis-extrabold {
+    font-family: var(--font-dosis);
+    font-weight: 800;
+  }
+
+  .font-chosence {
+    font-family: var(--font-chosence);
+  }
+
+  .font-avant-garde {
+    font-family: var(--font-avant-garde);
   }
 
   /* Responsive letter-spacing */
@@ -213,11 +277,11 @@
   }
 
   .dot-triangle-right {
-  width: 140px;
-  height: 140px;
-  background: radial-gradient(var(--cream) 2px, transparent 3px) 0 0/20px 20px;
-  clip-path: polygon(100% 50%, 0 0, 0 100%);
-}
+    width: 140px;
+    height: 140px;
+    background: radial-gradient(var(--cream) 2px, transparent 3px) 0 0/20px 20px;
+    clip-path: polygon(100% 50%, 0 0, 0 100%);
+  }
 
   /* ----- Portrait placeholder ----- */
   .portrait {
@@ -290,8 +354,6 @@
   width: var(--size);
   aspect-ratio: 1 / 1;
 }
-
-
 
 /* ========= UTILITIES ========= */
 @layer utilities {

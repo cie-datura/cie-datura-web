@@ -15,11 +15,6 @@ const citations = [
     author: "Nicolas Desroziers",
     title: "professeur de musique et artiste lyrique",
   },
-  {
-    text: "Lakmé, ce nom qui flotte dans la mémoire collective, souvent réduit à un air célèbre, le Duo des fleurs, reprend vie sous un jour inattendu. Oubliez les pagodes en carton, les robes d'apparat, les clichés exotiques : la scène s'ouvre sur une lande de sable, nue, mouvante, hors du temps.",
-    author: "Sylvie Lecoules",
-    title: "journaliste au Tarn libre",
-  },
 ];
 
 interface CitationItemProps {
@@ -28,15 +23,16 @@ interface CitationItemProps {
 
 function CitationItem({ citation }: CitationItemProps) {
   return (
-    <div className="mb-8 last:mb-0">
+    <div className="bg-mustard rounded-2xl border-3 border-white p-5 shadow-lg h-full flex flex-col">
       {/* Citation text */}
-      <blockquote className="text-navy text-base leading-relaxed mb-4">
+      <blockquote className="text-navy text-sm leading-relaxed mb-4 flex-grow">
         &laquo;&nbsp;{citation.text}&nbsp;&raquo;
       </blockquote>
 
       {/* Author */}
-      <div className="text-navy font-bold text-base">
-        {citation.author}, {citation.title}
+      <div className="mt-auto">
+        <div className="text-navy font-bold text-sm">{citation.author}</div>
+        <div className="text-navy text-xs opacity-80">{citation.title}</div>
       </div>
     </div>
   );
@@ -44,22 +40,18 @@ function CitationItem({ citation }: CitationItemProps) {
 
 export default function Citations() {
   return (
-    <section className="py-10 bg-mustard">
-      <div className="max-w-2xl mx-auto relative">
+    <section className="py-16 bg-cream">
+      <div className="max-w-7xl mx-auto px-6">
+        {/* Title */}
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-navy uppercase tracking-wider">
+          LE PUBLIC EN PARLE
+        </h2>
 
-        {/* Card container with rounded corners and white border */}
-        <div className="bg-mustard rounded-3xl border-4 border-white p-12">
-          {/* Title */}
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-8 md:mb-8 text-white uppercase tracking-wider">
-            LE PUBLIC EN PARLE
-          </h2>
-
-          {/* Citations */}
-          <div className="space-y-8">
-            {citations.map((citation, index) => (
-              <CitationItem key={index} citation={citation} />
-            ))}
-          </div>
+        {/* Citations grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {citations.map((citation, index) => (
+            <CitationItem key={index} citation={citation} />
+          ))}
         </div>
       </div>
     </section>
