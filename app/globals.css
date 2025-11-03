@@ -17,7 +17,7 @@
     --foreground: #ffffff;
     --mustard: #e8b82e;
     --navy: #242e64;
-    --cream: #fdf9ee; /* manquait */
+    --cream: #ffffff; 
   }
 
   @media (prefers-color-scheme: dark) {
