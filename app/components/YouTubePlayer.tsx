@@ -3,13 +3,11 @@
 interface YouTubePlayerProps {
   videoId: string;
   title?: string;
-  className?: string;
 }
 
 export default function YouTubePlayer({
   videoId,
   title = "YouTube video",
-  className = "",
 }: YouTubePlayerProps) {
   return (
     <div className="pt-12">

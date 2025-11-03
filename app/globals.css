@@ -212,6 +212,13 @@
     background: radial-gradient(var(--cream) 2px, transparent 3px) 0 0/20px 20px;
   }
 
+  .dot-triangle-right {
+  width: 140px;
+  height: 140px;
+  background: radial-gradient(var(--cream) 2px, transparent 3px) 0 0/20px 20px;
+  clip-path: polygon(100% 50%, 0 0, 0 100%);
+}
+
   /* ----- Portrait placeholder ----- */
   .portrait {
     width: 96px;

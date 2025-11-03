@@ -2,7 +2,6 @@ import ScrollButton from "./components/ScrollButton";
 import OptimizedHeroVideo from "./components/OptimizedHeroVideo";
 import Citations from "./components/Citations";
 import AboutDatura from "./components/AboutDatura";
-import YouTubePlayer from "./components/YouTubePlayer";
 
 export default function Home() {
   return (

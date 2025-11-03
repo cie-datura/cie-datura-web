@@ -1,4 +1,3 @@
-import Citations from "./Citations";
 import DownloadButton from "./DownloadButton";
 import YouTubePlayer from "./YouTubePlayer";
 
@@ -107,18 +106,12 @@ export default function AboutDatura() {
 
           {/* Dot lié au paragraphe, sans superposition */}
           <div className="mt-15 hidden md:flex justify-between">
+            <div className="dot-triangle-right" aria-hidden="true" />
             <div
               className="dot-matrix opacity-90 w-[120px] h-[120px]"
               aria-hidden="true"
             />
-            <div
-              className="dot-matrix opacity-90 w-[120px] h-[120px]"
-              aria-hidden="true"
-            />
-            <div
-              className="dot-matrix opacity-90 w-[120px] h-[120px]"
-              aria-hidden="true"
-            />
+            <div className="dot-triangle-right" aria-hidden="true" />
           </div>
         </div>
 
