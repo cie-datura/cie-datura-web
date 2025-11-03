@@ -44,7 +44,7 @@ function CitationItem({ citation }: CitationItemProps) {
 
 export default function Citations() {
   return (
-    <section className="py-10 ">
+    <section className="py-10 bg-mustard">
       <div className="max-w-2xl mx-auto relative">
 
         {/* Card container with rounded corners and white border */}

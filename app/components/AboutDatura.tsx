@@ -135,7 +135,7 @@ export default function AboutDatura() {
           </p>
 
           {/* Dot lié au paragraphe, sans superposition */}
-          <div className="mt-15 hidden md:flex justify-between">
+          <div className="mt-15 hidden xl:flex justify-between">
             <div className="dot-triangle-right" aria-hidden="true" />
             <div
               className="dot-matrix opacity-90 w-[120px] h-[120px]"
