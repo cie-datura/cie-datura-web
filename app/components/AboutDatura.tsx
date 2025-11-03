@@ -1,5 +1,6 @@
 import DownloadButton from "./DownloadButton";
 import YouTubePlayer from "./YouTubePlayer";
+import Image from "next/image";
 
 export default function AboutDatura() {
   const hrefDossierPresentation = "/utils/dossier-presentation.pdf";
@@ -49,13 +50,42 @@ export default function AboutDatura() {
       { nom: "RODOLPHE LOSPIED", rôle: "PIANO" },
     ],
     laChefferie: [
-      { nom: "TIMOTHÉE HUDRISIER", rôle: "Directeur Artistique" },
-      { nom: "MATHILDE BELLIN", rôle: "Metteuse en Scène" },
-      { nom: "GUILLEMETTE DABOVAL", rôle: "Directrice Musicale" },
-      { nom: "FRANK GIZYCKI", rôle: "Chorégraphe" },
-      { nom: "ALEXANDRE SCHREIBER", rôle: "Créateur Lumière" },
-      { nom: "RACHEL TESTARD", rôle: "Scénographe" },
-      { nom: "CARMEN ESPÉROU", rôle: "Costumière" },
+      {
+        nom: "TIMOTHÉE HUDRISIER",
+        rôle: "Directeur Artistique",
+        imageSrc: "/images/chefferie/TimSlice.jpg",
+      },
+      {
+        nom: "MATHILDE BELLIN",
+        rôle: "Metteuse en Scène",
+        imageSrc: "/images/chefferie/MathildeSlice.jpg",
+      },
+      {
+        nom: "GUILLEMETTE DABOVAL",
+        rôle: "Directrice Musicale",
+        imageSrc: "/images/chefferie/GuillouSlice.jpg",
+      },
+
+      {
+        nom: "ALEXANDRE SCHREIBER",
+        rôle: "Créateur Lumière",
+        imageSrc: "/images/chefferie/AlexSlice.jpg",
+      },
+      {
+        nom: "RACHEL TESTARD",
+        rôle: "Scénographe",
+        imageSrc: "/images/chefferie/RachelSlice.jpg",
+      },
+      {
+        nom: "CARMEN ESPÉROU",
+        rôle: "Costumière",
+        imageSrc: "/images/chefferie/CarmenSlice.jpg",
+      },
+      {
+        nom: "FRANK GIZYCKI",
+        rôle: "Chorégraphe",
+        imageSrc: "/images/chefferie/FrankSlice.jpg",
+      },
     ],
   };
 
@@ -125,22 +155,16 @@ export default function AboutDatura() {
       <section className="relative bg-cream text-navy flex flex-col">
         <div className="mx-auto max-w-4xl px-6 pt-16 pb-16 md:px-10 md:pb-24">
           {/* Portraits */}
-          <div className="grid grid-cols-3 gap-6 sm:grid-cols-6">
+          <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-4">
             {production.laChefferie.map((membre, i) => (
-              <div
-                key={i}
-                className="flex flex-col items-center space-y-3 text-center"
-              >
-                <div className="portrait" aria-hidden="true" />
-                {/* Nom + Rôle groupés */}
-                <div className="flex flex-col items-center leading-tight">
-                  <p className="text-[10px] uppercase tracking-widest font-semibold md:text-[11px]">
-                    {membre.nom}
-                  </p>
-                  <p className="text-[10px] opacity-70 md:text-[11px]">
-                    {membre.rôle}
-                  </p>
-                </div>
+              <div key={i} className="w-full">
+                <Image
+                  src={membre.imageSrc}
+                  alt={membre.nom}
+                  width={300}
+                  height={400}
+                  className="w-full h-auto rounded-t-full"
+                />
               </div>
             ))}
           </div>
@@ -154,7 +178,7 @@ export default function AboutDatura() {
             title="Découvrez Lakmé en vidéo"
           />
           {/* Bouton + vidéo */}
-          <div className="mt-15 flex flex-col items-center gap-6 w-full bg-red-500">
+          <div className="mt-15 flex flex-col items-center gap-6 w-full ">
             <DownloadButton href={hrefDossierPresentation}>
               Téléchargez notre dossier artistique
             </DownloadButton>
