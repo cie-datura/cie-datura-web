@@ -2,7 +2,7 @@
 
 import { useIntersectionObserver } from "../hooks/useIntersectionObserver";
 import YouTubePlayer from "./YouTubePlayer";
-
+import YoutubeReactPlayer from "./YoutubeReactPlayer";
 const citations = [
   {
     text: "Nous avons besoin de l'opéra aujourd'hui pour nous évader, et le spectacle visuel, musical, lyrique et théâtral de la Compagnie Datura le permet avec charme et enchantements.",
@@ -120,12 +120,17 @@ export default function Citations() {
         </div>
 
         {/* Player YouTube */}
-
-          <YouTubePlayer
+        <AnimatedElement
+          isVisible={isVisible}
+          delay={800}
+          className="max-w-4xl mx-auto"
+        >
+          <YoutubeReactPlayer
             videoId="Bxei_qK6ntc"
             title="Découvrez Lakmé en vidéo"
             description="Extrait de notre production de Lakmé de Léo Delibes"
           />
+        </AnimatedElement>
       </div>
     </section>
   );

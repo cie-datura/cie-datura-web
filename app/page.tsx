@@ -25,7 +25,7 @@ export default function Home() {
 
         {/* Titre principal au centre */}
         <div className="relative z-20 text-center text-white px-4">
-          <h2 className="text-7xl md:text-8xl sm: font-bold animate-fade-in-delay title-font tracking-[50px] animate-title-opera">
+          <h2 className="text-7xl md:text-8xl font-bold animate-fade-in-delay title-font animate-title-opera">
             LAKMÉ
           </h2>
         </div>

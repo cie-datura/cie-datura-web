@@ -1,6 +1,8 @@
 import DownloadButton from "./DownloadButton";
+import Image from "next/image";
 
 export default function AboutDatura() {
+  const imagePath = "/utils/afficheLakme.jpg";
   const hrefDossierPresentation = "/utils/dossier-presentation.pdf";
   const production = {
     plateau: [
@@ -134,7 +136,7 @@ export default function AboutDatura() {
           </div>
 
           {/* Title */}
-          <div className="mt-10 flex items-center gap-4">
+          {/* <div className="mt-10 flex items-center gap-4">
             <div>
               <h3 className="uppercase tracking-widest font-semibold">
                 Distribution lors de la création
@@ -143,10 +145,10 @@ export default function AboutDatura() {
                 Mai 2025
               </div>
             </div>
-          </div>
+          </div> */}
 
           {/* Credits grid */}
-          <div className="credits mt-8">
+          {/* <div className="credits mt-8">
             <div>
               <h4>Au plateau</h4>
               <ul className="flex flex-col gap-3">
@@ -192,18 +194,27 @@ export default function AboutDatura() {
                 ))}
               </ul>
             </div>
-          </div>
+          </div> */}
 
-          {/* Rule */}
+          {/* container image + button */}
+          <div className="w-full h-[75%] flex flex-col items-center">
+
           <div className="rule-dots mt-8" />
-
+          <div className="p-5">
+            <Image
+              src={imagePath}
+              alt="poster du spectacle"
+              width={500}
+              height={500}
+            />
+          </div>
           {/* ================ BOUTON DOWNLOAD DOSSIER DE PRESENTATION ==================== */}
-          <DownloadButton
-            href={hrefDossierPresentation}
-            
-          >
-            Téléchargez notre dossier artistique
-          </DownloadButton>
+          <div>
+            <DownloadButton href={hrefDossierPresentation}>
+              Téléchargez notre dossier artistique
+            </DownloadButton>
+          </div>
+          </div>
         </div>
       </section>
     </main>
