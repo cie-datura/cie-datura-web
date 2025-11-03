@@ -2,8 +2,7 @@ import ScrollButton from "./components/ScrollButton";
 import OptimizedHeroVideo from "./components/OptimizedHeroVideo";
 import Citations from "./components/Citations";
 import AboutDatura from "./components/AboutDatura";
-// import YouTubePlayer from "./components/YouTubePlayer";
-// const DOSSIER_PRESENTATION_PATH = "/utils/dossier-presentation.pdf";
+import YouTubePlayer from "./components/YouTubePlayer";
 
 export default function Home() {
   return (
@@ -46,10 +45,9 @@ export default function Home() {
       <section id="presentation">
         <AboutDatura />
       </section>
-
-      {/* Section Citations */}
-      <Citations />
-
+      <section id="citations">
+        <Citations />
+      </section>
     </main>
   );
 }

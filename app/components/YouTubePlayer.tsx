@@ -8,23 +8,24 @@ interface YouTubePlayerProps {
 
 export default function YouTubePlayer({
   videoId,
-  title = "Vidéo YouTube",
+  title = "YouTube video",
   className = "",
 }: YouTubePlayerProps) {
   return (
-    <div
-      className={`bg-slate-800/30 backdrop-blur-sm p-8 rounded-lg border border-slate-600/30 ${className}`}
-    >
+    <div className="pt-12">
       {title && (
-        <h3 className="text-2xl md:text-3xl font-bold text-center mb-6 text-white title-font">
+        <h3 className="text-3xl md:text-4xl font-bold text-center mb-8 text-navy title-font ">
           {title}
         </h3>
       )}
 
-      <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
+      <div
+        className="relative w-full max-w-6xl mx-auto"
+        style={{ paddingBottom: "56.25%" }}
+      >
         <iframe
           className="absolute inset-0 w-full h-full rounded-lg"
-          src={`https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1&enablejsapi=0&disablekb=1&fs=1&iv_load_policy=3`}
+          src={`https://www.youtube-nocookie.com/embed/${videoId}?rel=0&modestbranding=1&iv_load_policy=3`}
           title={title}
           allow="autoplay; encrypted-media; picture-in-picture; web-share"
           allowFullScreen

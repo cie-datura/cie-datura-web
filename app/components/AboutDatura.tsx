@@ -1,9 +1,10 @@
+import Citations from "./Citations";
 import DownloadButton from "./DownloadButton";
-import Image from "next/image";
+import YouTubePlayer from "./YouTubePlayer";
 
 export default function AboutDatura() {
-  const imagePath = "/utils/afficheLakme.jpg";
   const hrefDossierPresentation = "/utils/dossier-presentation.pdf";
+
   const production = {
     plateau: [
       { nom: "MAUD BESSARD-MORANDAS", rôle: "LAKMÉ" },
@@ -27,7 +28,6 @@ export default function AboutDatura() {
         rôle: "ASSOCIATION DENSITÉ",
       },
     ],
-
     technique: [
       { nom: "RACHEL TESTARD", rôle: "RÉGIE GÉNÉRALE" },
       { nom: "ADÈLE ROMIEU", rôle: "RÉGIE PLATEAU" },
@@ -37,7 +37,6 @@ export default function AboutDatura() {
       { nom: "DELPHINE FLEURY", rôle: "COIFFURE" },
       { nom: "LEVANA TORTOLO", rôle: "STAGIAIRE SCÉNOGRAPHIE" },
     ],
-
     orchestre: [
       { nom: ["LILYA CHIFMAN", "ROBIN APPARAILLY"], rôle: "VIOLONS" },
       { nom: "LISA CARDONNET", rôle: "ALTO" },
@@ -50,7 +49,6 @@ export default function AboutDatura() {
       { nom: "ANA GENET", rôle: "BASSON" },
       { nom: "RODOLPHE LOSPIED", rôle: "PIANO" },
     ],
-
     laChefferie: [
       { nom: "TIMOTHÉE HUDRISIER", rôle: "Directeur Artistique" },
       { nom: "MATHILDE BELLIN", rôle: "Metteuse en Scène" },
@@ -69,13 +67,13 @@ export default function AboutDatura() {
         {/* Corner */}
         <div className="corner-l absolute left-6 top-6" aria-hidden="true" />
 
-        <div className="mx-auto max-w-3xl px-6 pt-28 pb-16 md:px-10 md:pb-24">
-          {/* Stacked title */}
+        {/* Contenu gauche */}
+        <div className="mx-auto max-w-3xl px-6 pt-28 pb-16 md:px-10 md:pb-4">
           <h1 className="flex flex-col gap-2 font-bold uppercase tracking-widest leading-[1.05]">
             <span className="text-[clamp(2rem,7vw,4.8rem)]">La</span>
             <span className="text-[clamp(2rem,7vw,4.8rem)]">Compag-</span>
             <span className="text-[clamp(2rem,7vw,4.8rem)]">nie</span>
-            <span className="text-[clamp(2rem,7vw,4.8rem)] text-(--cream)">
+            <span className="text-[clamp(2rem,7vw,4.8rem)] text-[var(--cream)]">
               Datura
             </span>
           </h1>
@@ -88,12 +86,12 @@ export default function AboutDatura() {
               <span className="chevron" />
               <span className="chevron" />
             </div>
-            <h2 className="uppercase tracking-widest text-(--cream) font-semibold">
+            <h2 className="uppercase tracking-widest text-[var(--cream)] font-semibold">
               Origine de la compagnie
             </h2>
           </div>
 
-          {/* Paragraph */}
+          {/* Paragraphe */}
           <p className="mt-4 leading-relaxed max-w-prose text-sm md:text-base">
             Née à Albi, dans le Sud-Ouest de la France, la compagnie Datura
             réunit quatre ami·e·s d’enfance aux parcours reconnus — Mathilde
@@ -106,114 +104,67 @@ export default function AboutDatura() {
             Leur première création, <b>Lakmé</b>, voit le jour au Théâtre
             municipal d’Albi en mai 2025.
           </p>
+
+          {/* Dot lié au paragraphe, sans superposition */}
+          <div className="mt-15 hidden md:flex justify-between">
+            <div
+              className="dot-matrix opacity-90 w-[120px] h-[120px]"
+              aria-hidden="true"
+            />
+            <div
+              className="dot-matrix opacity-90 w-[120px] h-[120px]"
+              aria-hidden="true"
+            />
+            <div
+              className="dot-matrix opacity-90 w-[120px] h-[120px]"
+              aria-hidden="true"
+            />
+          </div>
         </div>
 
-        {/* Dots */}
-        <div
-          className="dot-matrix absolute right-4 bottom-4 md:right-8 md:bottom-8 opacity-90"
-          style={{ width: 120, height: 120 }}
-          aria-hidden="true"
-        />
+        {/* Séparateur positionné en bas de la section */}
+        <div className="mt-auto px-6 pb-6 md:px-10 md:pb-8">
+          <div className="rule-dots" aria-hidden="true" />
+        </div>
       </section>
 
       {/* RIGHT PAGE */}
-
       <section className="relative bg-cream text-navy flex flex-col">
         <div className="mx-auto max-w-4xl px-6 pt-16 pb-16 md:px-10 md:pb-24">
           {/* Portraits */}
           <div className="grid grid-cols-3 gap-6 sm:grid-cols-6">
             {production.laChefferie.map((membre, i) => (
-              <div key={i} className="text-center">
-                <div className="portrait mx-auto" aria-hidden="true" />
-                <p className="mt-2 text-[10px] uppercase tracking-widest font-semibold md:text-[11px]">
-                  {membre.nom}
-                </p>
-                <p className="text-[10px] opacity-70 md:text-[11px]">
-                  {membre.rôle}
-                </p>
+              <div
+                key={i}
+                className="flex flex-col items-center space-y-3 text-center"
+              >
+                <div className="portrait" aria-hidden="true" />
+                {/* Nom + Rôle groupés */}
+                <div className="flex flex-col items-center leading-tight">
+                  <p className="text-[10px] uppercase tracking-widest font-semibold md:text-[11px]">
+                    {membre.nom}
+                  </p>
+                  <p className="text-[10px] opacity-70 md:text-[11px]">
+                    {membre.rôle}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
 
-          {/* Title */}
-          {/* <div className="mt-10 flex items-center gap-4">
-            <div>
-              <h3 className="uppercase tracking-widest font-semibold">
-                Distribution lors de la création
-              </h3>
-              <div className="text-mustard font-bold uppercase tracking-widest text-xs md:text-sm">
-                Mai 2025
-              </div>
-            </div>
-          </div> */}
-
-          {/* Credits grid */}
-          {/* <div className="credits mt-8">
-            <div>
-              <h4>Au plateau</h4>
-              <ul className="flex flex-col gap-3">
-                {production.plateau.map((membre, i) => (
-                  <li key={i} className="flex flex-col leading-tight list-none">
-                    <span className="font-bold">
-                      {Array.isArray(membre.nom)
-                        ? membre.nom.join(", ")
-                        : membre.nom}
-                    </span>
-                    <span className="text-sm opacity-75">{membre.rôle}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <h4>Orchestre</h4>
-              <ul className="flex flex-col gap-3">
-                {production.orchestre.map((membre, i) => (
-                  <li key={i} className="flex flex-col leading-tight list-none">
-                    <span className="font-bold">
-                      {Array.isArray(membre.nom)
-                        ? membre.nom.join(", ")
-                        : membre.nom}
-                    </span>
-                    <span className="text-sm opacity-75">{membre.rôle}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <h4>Technique</h4>
-              <ul className="flex flex-col gap-3">
-                {production.technique.map((membre, i) => (
-                  <li key={i} className="flex flex-col leading-tight list-none">
-                    <span className="font-bold">
-                      {Array.isArray(membre.nom)
-                        ? membre.nom.join(", ")
-                        : membre.nom}
-                    </span>
-                    <span className="text-sm opacity-75">{membre.rôle}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div> */}
-
-          {/* container image + button */}
-          <div className="w-full h-[75%] flex flex-col items-center">
-
-          <div className="rule-dots mt-8" />
-          <div className="p-5">
-            <Image
-              src={imagePath}
-              alt="poster du spectacle"
-              width={500}
-              height={500}
-            />
+          {/* Séparateur + actions */}
+          <div className="mt-8">
+            <div className="rule-dots" aria-hidden="true" />
           </div>
-          {/* ================ BOUTON DOWNLOAD DOSSIER DE PRESENTATION ==================== */}
-          <div>
+          <YouTubePlayer
+            videoId="Bxei_qK6ntc"
+            title="Découvrez Lakmé en vidéo"
+          />
+          {/* Bouton + vidéo */}
+          <div className="mt-15 flex flex-col items-center gap-6 w-full bg-red-500">
             <DownloadButton href={hrefDossierPresentation}>
               Téléchargez notre dossier artistique
             </DownloadButton>
-          </div>
           </div>
         </div>
       </section>

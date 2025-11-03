@@ -15,7 +15,7 @@ export default function DownloadButton({
       target="_blank"
       rel="noopener noreferrer"
       href={href}
-      className="bg-(--mustard) text-black px-8 py-4 rounded-full font-semibold text-lg hover:bg-(--navy) hover:text-(--mustard) hover:cursor-pointer transition-all"
+      className="bg-(--mustard) text-black px-10 py-4 rounded-full font-semibold text-lg hover:bg-(--navy) hover:text-(--mustard) hover:cursor-pointer transition-all"
       download
     >
       {children}
