@@ -154,7 +154,7 @@ export default function AboutDatura() {
         </div>
 
         {/* Séparateur et contact positionnés en bas de la section */}
-        <div className="mt-auto px-6 pb-6 md:px-10 md:pb-8 space-y-6">
+        <div className="mt-auto px-6 pb-6 md:px-10 md:pb-8 space-y-3">
           {/* Encart de contact */}
           <div className="p-6 border-2 border-white rounded-lg bg-transparent">
             <h3 className="text-2xl font-chosence text-cream mb-4 text-center">
