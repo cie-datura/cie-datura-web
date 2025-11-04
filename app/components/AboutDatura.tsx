@@ -170,8 +170,7 @@ export default function AboutDatura() {
             </div>
           </div>
           
-          {/* Séparateur */}
-          <div className="rule-dots" aria-hidden="true" />
+   
         </div>
       </section>
 
@@ -210,6 +209,7 @@ export default function AboutDatura() {
           </div>
         </div>
       </section>
+
     </main>
   );
 }
