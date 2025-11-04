@@ -3,19 +3,31 @@
 import { useRef } from "react";
 import { useVideoLoader } from "../hooks/useVideoLoader";
 
-export default function OptimizedHeroVideo() {
+interface VideoSectionProps {
+  videoSrc: string;
+  posterSrc: string;
+  className?: string;
+  threshold?: number;
+}
+
+export default function VideoSection({ 
+  videoSrc, 
+  posterSrc, 
+  className = "", 
+  threshold = 0.1 
+}: VideoSectionProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const { showPosterOnly, shouldLoadVideo, sectionRef } = useVideoLoader({
-    threshold: 0.1, // Déclencher quand 10% de la section est visible
+    threshold,
   });
 
   return (
-    <section ref={sectionRef} className="absolute inset-0">
+    <section ref={sectionRef} className={`relative ${className}`}>
       {/* Poster image - toujours affiché en premier */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: "url('/utils/hero-poster.webp')",
+          backgroundImage: `url('${posterSrc}')`,
         }}
       />
 
@@ -29,15 +41,11 @@ export default function OptimizedHeroVideo() {
           loop
           playsInline
           preload="metadata"
-          poster="/utils/hero-poster.webp"
+          poster={posterSrc}
         >
-          <source src="/utils/hero-lakme.webm" type="video/webm" />
-          <source src="/utils/hero-safari-fallback.mp4" type="video/mp4" />
+          <source src={videoSrc} type="video/mp4" />
         </video>
       )}
-
-      {/* Overlay sombre pour lisibilité */}
-      <div className="absolute inset-0 bg-black/40" />
     </section>
   );
 }
