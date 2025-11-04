@@ -62,7 +62,7 @@ export default function IndividualQuoteButton({ quote, index }: IndividualQuoteB
             exit={{ opacity: 0, scale: 0.8, rotate: 180 }}
             transition={{ duration: 0.5, ease: "easeInOut" }}
           >
-            <div className="relative w-full scale-90 hover:scale-105 transition-transform">
+            <div className="relative w-full scale-90 hover:scale-138 transition-transform">
               <Button
                 variant="secondary"
                 onClick={toggleExpanded}
