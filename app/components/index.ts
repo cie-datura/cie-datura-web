@@ -3,7 +3,6 @@ export { default as QuoteButton } from './QuoteButton';
 export { default as IndividualQuoteButton } from './IndividualQuoteButton';
 export { default as Citations } from './Citations';
 export { default as OptimizedHeroVideo } from './OptimizedHeroVideo';
-export { default as VideoSection } from './VideoSection';
 
 // Export des composants UI
 export { default as Button } from './ui/Button';

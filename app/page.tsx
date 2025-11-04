@@ -16,14 +16,14 @@ export default function Home() {
 
         {/* Titre en haut */}
         <div className="relative z-20 text-center text-white px-4 pt-20">
-          <h1 className="text-3xl md:text-5xl font-bold animate-fade-in title-font">
+          <h1 className="text-3xl md:text-5xl  animate-fade-in font-chosence">
             LA COMPAGNIE DATURA PRÉSENTE
           </h1>
         </div>
 
         {/* Titre principal au centre */}
         <div className="relative z-20 text-center text-white px-4">
-          <h2 className="text-7xl md:text-8xl font-bold animate-fade-in-delay title-font animate-title-opera">
+          <h2 className="text-7xl md:text-8xl animate-fade-in-delay font-chosence animate-title-opera">
             LAKMÉ
           </h2>
         </div>
@@ -33,7 +33,7 @@ export default function Home() {
           {/* Call to action */}
           <ScrollButton
             targetId="presentation"
-            className="bg-white text-black px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 hover:cursor-pointer transition-all duration-300 animate-bounce"
+            className="bg-white text-black px-8 py-4 rounded-full text-lg hover:bg-gray-100 hover:cursor-pointer transition-all duration-300 animate-bounce font-avant-garde"
           >
             Découvrir plus ↓
           </ScrollButton>

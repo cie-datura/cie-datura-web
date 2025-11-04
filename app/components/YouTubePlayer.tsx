@@ -12,7 +12,7 @@ export default function YouTubePlayer({
   return (
     <div className="pt-12">
       {title && (
-        <h3 className="text-3xl md:text-4xl font-bold text-center mb-8 text-navy title-font ">
+        <h3 className="text-3xl md:text-6xl font-chosence font-lightbold  text-center mb-8 text-navy title-font ">
           {title}
         </h3>
       )}

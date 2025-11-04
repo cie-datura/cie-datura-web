@@ -33,7 +33,7 @@
   /* Chosence */
   @font-face {
     font-family: "Chosence";
-    src: url("/fonts/Chosence/Chosence.ttf") format("truetype");
+    src: url("/fonts/Chosence/Chosence Regular.otf") format("truetype");
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -55,9 +55,8 @@
     --navy: #242e64;
     --cream: #ffffff;
 
-    /* Font families */
+    /* Font families - les variables Next.js seront injectées automatiquement */
     --font-cocogoose: "CocogoosePro-Light", Arial, sans-serif;
-    --font-dosis: "Dosis", sans-serif;
     --font-chosence: "Chosence", sans-serif;
     --font-avant-garde: "Avant Garde", sans-serif;
   }
@@ -73,19 +72,34 @@
   @theme inline {
     --color-background: var(--background);
     --color-foreground: var(--foreground);
+    --color-mustard: var(--mustard);
+    --color-navy: var(--navy);
+    --color-cream: var(--cream);
     --font-sans: var(--font-geist-sans);
     --font-mono: var(--font-geist-mono);
-    --font-cocogoose: var(--font-cocogoose);
     --font-dosis: var(--font-dosis);
+    --font-cocogoose: var(--font-cocogoose);
     --font-chosence: var(--font-chosence);
     --font-avant-garde: var(--font-avant-garde);
   }
 
-  /* Body par défaut via Tailwind tokens */
+  /* Body par défaut avec Dosis */
   body {
     background: var(--background);
     color: var(--foreground);
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: var(--font-dosis), Arial, Helvetica, sans-serif;
+    font-weight: 400;
+  }
+
+  /* Styles pour le texte avec Dosis */
+  p {
+    font-family: var(--font-dosis), Arial, Helvetica, sans-serif;
+    font-weight: 400;
+  }
+
+  b, strong {
+    font-family: var(--font-dosis), Arial, Helvetica, sans-serif;
+    font-weight: 800;
   }
 
   /* Classes de polices personnalisées */
@@ -107,6 +121,8 @@
 
   .font-chosence {
     font-family: var(--font-chosence);
+    letter-spacing: 0.38em;
+
   }
 
   .font-avant-garde {

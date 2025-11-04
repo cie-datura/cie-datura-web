@@ -98,11 +98,11 @@ export default function AboutDatura() {
 
         {/* Contenu gauche */}
         <div className="mx-auto max-w-3xl px-6 pt-28 pb-16 md:px-10 md:pb-4">
-          <h1 className="flex flex-col gap-2 font-bold uppercase tracking-widest leading-[1.05]">
+          <h1 className="flex flex-col gap-2 uppercase tracking-widest leading-[1.05] font-chosence">
             <span className="text-[clamp(2rem,7vw,4.8rem)]">La</span>
             <span className="text-[clamp(2rem,7vw,4.8rem)]">Compag-</span>
             <span className="text-[clamp(2rem,7vw,4.8rem)]">nie</span>
-            <span className="text-[clamp(2rem,7vw,4.8rem)] text-[var(--cream)]">
+            <span className="text-[clamp(2rem,7vw,4.8rem)] text-cream">
               Datura
             </span>
           </h1>
@@ -121,9 +121,9 @@ export default function AboutDatura() {
               </h2>
             </div>
             <p className="mt-4 leading-relaxed max-w-prose text-sm md:text-base">
-              L’équipe artistique à l’initiative du projet est originaire d’Albi
-              dans le Sud-Ouest de la France. Quatre ami·e·s d’enfance uni·e·s
-              par un regard critique sur la place de l’art dans la société, et
+              L'équipe artistique à l'initiative du projet est originaire d'Albi
+              dans le Sud-Ouest de la France. Quatre ami·e·s d'enfance uni·e·s
+              par un regard critique sur la place de l'art dans la société, et
               poursuivant chacun·e une carrière reconnue dans leur domaine
               respectif : Mathilde Bellin dans le théâtre, Carmen Esperou dans
               la mode, Frank Gizycki dans la danse et Timothée Hudrisier dans la
@@ -135,12 +135,12 @@ export default function AboutDatura() {
               .
               <br /> <br />
               La compagnie Datura - du nom de la fleur qui précipite le destin
-              de Lakmé - se structure, s’entoure d’autres artistes
-              expérimenté·e·s et recrute un plateau d’interprètes soudé·e·s par
-              l’envie commune de rompre avec les a priori sur l’art lyrique.
+              de Lakmé - se structure, s'entoure d'autres artistes
+              expérimenté·e·s et recrute un plateau d'interprètes soudé·e·s par
+              l'envie commune de rompre avec les a priori sur l'art lyrique.
               <br /> <br />
               Datura crée sa première production Lakmé au théâtre municipal
-              d’Albi en mai 2025.
+              d'Albi en mai 2025.
             </p>
           </div>
 
