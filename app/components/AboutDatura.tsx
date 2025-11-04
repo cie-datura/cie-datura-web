@@ -153,15 +153,31 @@ export default function AboutDatura() {
           </div>
         </div>
 
-        {/* Séparateur positionné en bas de la section */}
-        <div className="mt-auto px-6 pb-6 md:px-10 md:pb-8">
+        {/* Séparateur et contact positionnés en bas de la section */}
+        <div className="mt-auto px-6 pb-6 md:px-10 md:pb-8 space-y-6">
+          {/* Encart de contact */}
+          <div className="p-6 border-2 border-white rounded-lg bg-transparent">
+            <h3 className="text-2xl font-chosence text-cream mb-4 text-center">
+              Contactez-nous
+            </h3>
+            <div className="text-center">
+              <a 
+                href="mailto:contact@cie-datura.fr"
+                className="text-cream hover:text-white transition-colors duration-300 text-lg underline decoration-2 underline-offset-4"
+              >
+                contact@cie-datura.fr
+              </a>
+            </div>
+          </div>
+          
+          {/* Séparateur */}
           <div className="rule-dots" aria-hidden="true" />
         </div>
       </section>
 
       {/* RIGHT PAGE */}
       <section className="relative bg-cream text-navy flex flex-col">
-        <div className="mx-auto max-w-4xl px-6 pt-16 pb-16 md:px-10 md:pb-24">
+        <div className="mx-auto max-w-4xl px-6 pt-16 pb-16 md:px-10 md:pb-5">
           {/* Portraits */}
           <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-4">
             {production.laChefferie.map((membre, i) => (
