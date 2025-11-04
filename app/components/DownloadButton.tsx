@@ -57,7 +57,7 @@ export default function DownloadButton({
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-center">
             <motion.p 
-              className="text-sm font-bold"
+              className="text-xl font-bold"
               animate={{ 
                 color: isHovered ? "#e8b82e" : "#242e64"
               }}

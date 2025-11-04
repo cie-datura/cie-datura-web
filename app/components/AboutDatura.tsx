@@ -172,6 +172,7 @@ export default function AboutDatura() {
                   width={300}
                   height={400}
                   className="w-full h-auto rounded-t-full"
+                  priority={i < 4} // Priority pour les 4 premières images (above the fold)
                 />
               </div>
             ))}

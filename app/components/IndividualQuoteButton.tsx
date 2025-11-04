@@ -88,7 +88,7 @@ export default function IndividualQuoteButton({ quote, index }: IndividualQuoteB
               {/* Contenu de la citation */}
               <div className="absolute inset-0 flex items-center justify-center p-8">
                 <div className="text-center max-w-[90%] max-h-[90%] overflow-hidden flex flex-col justify-center">
-                  <blockquote className="text-[10px] leading-tight mb-1 text-white font-medium">
+                  <blockquote className="text-[11px] leading-tight mb-1 text-white font-medium">
                     "{quote.text}"
                   </blockquote>
                   <cite className="text-[9px] font-bold text-white not-italic">
