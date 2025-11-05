@@ -41,9 +41,9 @@ export default function YouTubePlayer({
               loading="lazy"
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors" />
+            <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40  transition-colors" />
             <div className="absolute inset-0 flex items-center justify-center">
-              <div className="rounded-full bg-white/95 p-5 group-hover:scale-105 transition-transform shadow-lg">
+              <div className="rounded-full bg-white/95 p-5 group-hover:scale-105 group-hover:cursor-pointer transition-transform shadow-lg">
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M8 5v14l11-7z" />
                 </svg>

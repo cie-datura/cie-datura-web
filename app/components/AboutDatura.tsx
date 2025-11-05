@@ -160,17 +160,34 @@ export default function AboutDatura() {
             <h3 className="text-2xl font-chosence text-cream mb-4 text-center">
               Contactez-nous
             </h3>
+            <div className="flex flex-col xl:flex-row justify-evenly">
+
             <div className="text-center">
-              <a 
+              <a
                 href="mailto:contact@cie-datura.fr"
-                className="text-cream hover:text-white transition-colors duration-300 text-lg underline decoration-2 underline-offset-4"
+                className="text-cream hover:text-white transition-colors duration-300 text-lg hover:underline decoration-2 underline-offset-4"
               >
-                contact@cie-datura.fr
+                CONTACT@CIE-DATURA.FR
               </a>
             </div>
+            <div className="text-center">
+              <a
+                href="https://www.instagram.com/cie_datura/"
+                className="text-cream hover:text-white transition-colors duration-300 text-lg hover:underline decoration-2 underline-offset-4"
+              >
+                INSTAGRAM
+              </a>
+            </div>
+            <div className="text-center">
+              <a
+                href="https://www.youtube.com/@CompagnieDatura"
+                className="text-cream hover:text-white transition-colors duration-300 text-lg hover:underline decoration-2 underline-offset-4"
+              >
+                YOUTUBE
+              </a>
+            </div>
+            </div>
           </div>
-          
-   
         </div>
       </section>
 
@@ -209,7 +226,6 @@ export default function AboutDatura() {
           </div>
         </div>
       </section>
-
     </main>
   );
 }
