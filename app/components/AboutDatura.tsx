@@ -1,9 +1,23 @@
 import DownloadButton from "./DownloadButton";
 import YouTubePlayer from "./YouTubePlayer";
 import Image from "next/image";
-
+import { SingleCircularText } from "./ui/SingleCircularText";
 export default function AboutDatura() {
   const hrefDossierPresentation = "/utils/dossier-presentation.pdf";
+
+  // Mapping des noms aux textes circulaires
+  const getCircularText = (nom: string) => {
+    const textMap: { [key: string]: string } = {
+      "TIMOTHÉE HUDRISIER": "TIMOTHÉE HUDRISIER ~ TIMOTHÉE HUDRISIER ~ ",
+      "MATHILDE BELLIN": "MATHILDE BELLIN ~ MATHILDE BELLIN ~ ",
+      "GUILLEMETTE DABOVAL": "GUILLEMETTE DABOVAL ~ GUILLEMETTE DABOVAL ~ ",
+      "ALEXANDRE SCHREIBER": "ALEXANDRE SCHREIBER ~ ALEXANDRE SCHREIBER ~ ",
+      "RACHEL TESTARD": "RACHEL TESTARD ~ RACHEL TESTARD ~ ",
+      "CARMEN ESPÉROU": "CARMEN ESPÉROU ~ CARMEN ESPÉROU ~ ",
+      "FRANK GIZYCKI": "FRANK GIZYCKI ~ FRANK GIZYCKI ~ ",
+    };
+    return textMap[nom] || `${nom} ~ ${nom} ~ `;
+  };
 
   const production = {
     plateau: [
@@ -53,38 +67,38 @@ export default function AboutDatura() {
       {
         nom: "TIMOTHÉE HUDRISIER",
         rôle: "Directeur Artistique",
-        imageSrc: "/images/chefferie/TimSlice.jpg",
+        imageSrc: "/images/chefferie/TimothéeCircle.jpg",
       },
       {
         nom: "MATHILDE BELLIN",
         rôle: "Metteuse en Scène",
-        imageSrc: "/images/chefferie/MathildeSlice.jpg",
+        imageSrc: "/images/chefferie/MathildeCircle.jpg",
       },
       {
         nom: "GUILLEMETTE DABOVAL",
         rôle: "Directrice Musicale",
-        imageSrc: "/images/chefferie/GuillouSlice.jpg",
+        imageSrc: "/images/chefferie/GuillemetteCircle.jpg",
       },
 
       {
         nom: "ALEXANDRE SCHREIBER",
         rôle: "Créateur Lumière",
-        imageSrc: "/images/chefferie/AlexSlice.jpg",
+        imageSrc: "/images/chefferie/AlexandreCircle.jpg",
       },
       {
         nom: "RACHEL TESTARD",
         rôle: "Scénographe",
-        imageSrc: "/images/chefferie/RachelSlice.jpg",
+        imageSrc: "/images/chefferie/RachelCircle.jpg",
       },
       {
         nom: "CARMEN ESPÉROU",
         rôle: "Costumière",
-        imageSrc: "/images/chefferie/CarmenSlice.jpg",
+        imageSrc: "/images/chefferie/CarmenCircle.jpg",
       },
       {
         nom: "FRANK GIZYCKI",
         rôle: "Chorégraphe",
-        imageSrc: "/images/chefferie/FrankSlice.jpg",
+        imageSrc: "/images/chefferie/FrankCircle.jpg",
       },
     ],
   };
@@ -161,31 +175,30 @@ export default function AboutDatura() {
               Contactez-nous
             </h3>
             <div className="flex flex-col xl:flex-row justify-evenly">
-
-            <div className="text-center">
-              <a
-                href="mailto:contact@cie-datura.fr"
-                className="text-cream hover:text-white transition-colors duration-300 text-lg hover:underline decoration-2 underline-offset-4"
-              >
-                CONTACT@CIE-DATURA.FR
-              </a>
-            </div>
-            <div className="text-center">
-              <a
-                href="https://www.instagram.com/cie_datura/"
-                className="text-cream hover:text-white transition-colors duration-300 text-lg hover:underline decoration-2 underline-offset-4"
-              >
-                INSTAGRAM
-              </a>
-            </div>
-            <div className="text-center">
-              <a
-                href="https://www.youtube.com/@CompagnieDatura"
-                className="text-cream hover:text-white transition-colors duration-300 text-lg hover:underline decoration-2 underline-offset-4"
-              >
-                YOUTUBE
-              </a>
-            </div>
+              <div className="text-center">
+                <a
+                  href="mailto:contact@cie-datura.fr"
+                  className="text-cream hover:text-white transition-colors duration-300 text-lg hover:underline decoration-2 underline-offset-4"
+                >
+                  CONTACT@CIE-DATURA.FR
+                </a>
+              </div>
+              <div className="text-center">
+                <a
+                  href="https://www.instagram.com/cie_datura/"
+                  className="text-cream hover:text-white transition-colors duration-300 text-lg hover:underline decoration-2 underline-offset-4"
+                >
+                  INSTAGRAM
+                </a>
+              </div>
+              <div className="text-center">
+                <a
+                  href="https://www.youtube.com/@CompagnieDatura"
+                  className="text-cream hover:text-white transition-colors duration-300 text-lg hover:underline decoration-2 underline-offset-4"
+                >
+                  YOUTUBE
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -193,23 +206,31 @@ export default function AboutDatura() {
 
       {/* RIGHT PAGE */}
       <section className="relative bg-cream text-navy flex flex-col">
-        <div className="mx-auto max-w-4xl px-6 pt-16 pb-16 md:px-10 md:pb-5">
+        <div className="mx-auto max-w-4xl pt-16 px-6 pb-16 md:pb-5">
           {/* Portraits */}
-          <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-4">
+          <div className="flex flex-col flex-wrap justify-evenly gap-20 lg:gap-25 xl:gap-30 xl:flex-row xl:w-full">
             {production.laChefferie.map((membre, i) => (
-              <div key={i} className="w-full">
-                <Image
-                  src={membre.imageSrc}
-                  alt={membre.nom}
-                  width={300}
-                  height={400}
-                  className="w-full h-auto "
-                  priority={i < 4} // Priority pour les 4 premières images (above the fold)
-                />
+              <div key={i} className="flex justify-center">
+                {/* Container pour l'image et le texte circulaire */}
+                <div className="relative w-28 h-28 flex">
+                  <Image
+                    src={membre.imageSrc}
+                    alt={membre.nom}
+                    fill
+                    className="object-cover rounded-full relative z-10"
+                    priority={i < 4}
+                  />
+                  {/* Texte circulaire autour de l'image */}
+                  <SingleCircularText
+                    text={getCircularText(membre.nom)}
+                    radius={75}
+                    duration={15 + i * 3}
+                  />
+                </div>
               </div>
             ))}
           </div>
-
+              
           {/* Séparateur + actions */}
           <div className="mt-8">
             <div className="rule-dots" aria-hidden="true" />
