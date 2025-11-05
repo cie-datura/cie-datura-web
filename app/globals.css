@@ -386,3 +386,13 @@
     color: var(--mustard);
   }
 }
+/* Force YouTube iframe to fill container completely */
+iframe[src*="youtube.com"],
+iframe[src*="youtube-nocookie.com"] {
+  width: 100% !important;
+  height: 100% !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  border: none !important;
+}
