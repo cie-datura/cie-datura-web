@@ -206,7 +206,7 @@ export default function AboutDatura() {
           {/* Portraits */}
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-10 md:gap-14 xl:gap-20 place-items-center">
             {production.laChefferie.map((membre, i) => (
-              <div key={i} className="flex justify-center">
+              <div key={i} className="flex flex-col items-center">
                 {/* Boîte dimensionnée pour l’anneau de texte (diamètre = 150px) */}
                 <div className="relative w-[150px] h-[150px]">
                   {/* Image centrée (diamètre ~112px) */}
@@ -237,6 +237,11 @@ export default function AboutDatura() {
                     />
                   </div>
                 </div>
+
+                {/* Rôle en dessous */}
+                <p className="mt-3 text-center text-sm font-medium text-navy">
+                  {membre.rôle}
+                </p>
               </div>
             ))}
           </div>
