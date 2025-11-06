@@ -247,7 +247,7 @@ export default function AboutDatura() {
           </div>
 
           {/* Séparateur + actions */}
-          <div className="mt-8">
+          <div className="mt-8 py-10">
             <div className="rule-dots" aria-hidden="true" />
           </div>
 
