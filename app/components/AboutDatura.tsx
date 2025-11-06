@@ -133,7 +133,7 @@ export default function AboutDatura() {
                 Origine de la compagnie
               </h2>
             </div>
-            <p className="mt-4 leading-relaxed max-w-prose text-sm md:text-base">
+            <p className=" mt-4 leading-relaxed max-w-prose text-sm md:text-base">
               L'équipe artistique à l'initiative du projet est originaire d'Albi
               dans le Sud-Ouest de la France. Quatre ami·e·s d'enfance uni·e·s
               par un regard critique sur la place de l'art dans la société, et
@@ -156,12 +156,12 @@ export default function AboutDatura() {
               d'Albi en mai 2025.
             </p>
           </div>
-          {/* Dot lié au paragraphe, sans superposition */}
-          <div className="mt-30 hidden xl:flex justify-between">
-            <div className="dot-triangle-right" aria-hidden="true" />
-            <div className="dot-triangle-right" aria-hidden="true" />
-            <div className="dot-triangle-right" aria-hidden="true" />
-          </div>
+          {/* Triangles décoratifs */}
+        </div>
+        <div className="hidden xl:flex justify-between max-w-3xl mx-auto px-10 mt-12 xl:mt-60 2xl:mt-40 mb-6 2xl:mb-10">
+          <div className="dot-triangle-right" />
+          <div className="dot-triangle-right" />
+          <div className="dot-triangle-right" />
         </div>
 
         {/* Séparateur et contact positionnés en bas de la section */}
