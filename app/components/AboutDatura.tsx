@@ -2,6 +2,7 @@ import DownloadButton from "./DownloadButton";
 import YouTubePlayer from "./YouTubePlayer";
 import Image from "next/image";
 import { SingleCircularText } from "./ui/SingleCircularText";
+import CreditsButton from "./CreditsButton";
 
 export default function AboutDatura() {
   const hrefDossierPresentation = "/utils/dossier-presentation.pdf";
@@ -256,11 +257,13 @@ export default function AboutDatura() {
             title="Découvrez Lakmé en vidéo"
           />
 
-          {/* Bouton + vidéo */}
-          <div className="mt-15 flex flex-col items-center gap-6 w-full ">
+          {/* Boutons */}
+          <div className="mt-15 flex flex-col sm:flex-row items-center justify-center gap-6 w-full">
             <DownloadButton href={hrefDossierPresentation}>
               Téléchargez notre dossier artistique
             </DownloadButton>
+                        <CreditsButton />
+
           </div>
         </div>
       </section>
