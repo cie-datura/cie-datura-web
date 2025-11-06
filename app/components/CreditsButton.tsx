@@ -28,7 +28,7 @@ export default function CreditsButton() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
-      className="w-full max-w-sm md:w-64 lg:w-72"
+      className="w-full max-w-sm md:w-60 lg:w-58"
     >
       <AnimatePresence mode="wait">
         {!isExpanded ? (
