@@ -2,6 +2,7 @@ import DownloadButton from "./DownloadButton";
 import YouTubePlayer from "./YouTubePlayer";
 import Image from "next/image";
 import { SingleCircularText } from "./ui/SingleCircularText";
+
 export default function AboutDatura() {
   const hrefDossierPresentation = "/utils/dossier-presentation.pdf";
 
@@ -79,7 +80,6 @@ export default function AboutDatura() {
         rôle: "Directrice Musicale",
         imageSrc: "/images/chefferie/GuillemetteCircle.jpg",
       },
-
       {
         nom: "ALEXANDRE SCHREIBER",
         rôle: "Créateur Lumière",
@@ -104,14 +104,14 @@ export default function AboutDatura() {
   };
 
   return (
-    <main className="flex flex-col min-h-screen md:grid md:grid-cols-2">
+    <main className="flex flex-col min-h-screen lg:grid lg:grid-cols-[0.9fr_1.1fr] 2xl:grid-cols-[0.8fr_1.2fr]">
       {/* LEFT PAGE */}
       <section className="relative bg-mustard text-navy overflow-hidden flex flex-col">
-        {/* Corner */}
         <div className="corner-l absolute left-6 top-6" aria-hidden="true" />
 
         {/* Contenu gauche */}
-        <div className="mx-auto max-w-3xl px-6 pt-28 pb-16 md:px-10 md:pb-4">
+        <div className="mx-auto max-w-3xl 2xl:max-w-2xl 3xl:max-w-xl px-6 pt-28 pb-16 md:px-10 md:pb-4">
+          {" "}
           <h1 className="flex flex-col gap-2 uppercase tracking-widest leading-[1.05] font-chosence">
             <span className="text-[clamp(2rem,7vw,4.8rem)]">La</span>
             <span className="text-[clamp(2rem,7vw,4.8rem)]">Compag-</span>
@@ -120,7 +120,6 @@ export default function AboutDatura() {
               Datura
             </span>
           </h1>
-
           {/* Heading avec chevrons et paragraphe aligné */}
           <div className="mt-12">
             <div className="flex items-center gap-4">
@@ -157,12 +156,10 @@ export default function AboutDatura() {
               d'Albi en mai 2025.
             </p>
           </div>
-
           {/* Dot lié au paragraphe, sans superposition */}
           <div className="mt-30 hidden xl:flex justify-between">
             <div className="dot-triangle-right" aria-hidden="true" />
             <div className="dot-triangle-right" aria-hidden="true" />
-
             <div className="dot-triangle-right" aria-hidden="true" />
           </div>
         </div>
@@ -203,42 +200,57 @@ export default function AboutDatura() {
           </div>
         </div>
       </section>
-
       {/* RIGHT PAGE */}
-      <section className="relative bg-cream text-navy flex flex-col">
-        <div className="mx-auto max-w-4xl pt-16 px-6 pb-16 md:pb-5">
+      <section className="relative bg-cream text-navy flex flex-col overflow-x-hidden">
+        <div className="mx-auto max-w-4xl pt-16 px-6 sm:px-8 md:px-10 pb-16 md:pb-5">
           {/* Portraits */}
-          <div className="flex flex-col flex-wrap justify-evenly gap-20 lg:gap-25 xl:gap-30 xl:flex-row xl:w-full">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-10 md:gap-14 xl:gap-20 place-items-center">
             {production.laChefferie.map((membre, i) => (
               <div key={i} className="flex justify-center">
-                {/* Container pour l'image et le texte circulaire */}
-                <div className="relative w-28 h-28 flex">
-                  <Image
-                    src={membre.imageSrc}
-                    alt={membre.nom}
-                    fill
-                    className="object-cover rounded-full relative z-10"
-                    priority={i < 4}
-                  />
-                  {/* Texte circulaire autour de l'image */}
-                  <SingleCircularText
-                    text={getCircularText(membre.nom)}
-                    radius={75}
-                    duration={15 + i * 3}
-                  />
+                {/* Boîte dimensionnée pour l’anneau de texte (diamètre = 150px) */}
+                <div className="relative w-[150px] h-[150px]">
+                  {/* Image centrée (diamètre ~112px) */}
+                  <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[112px] h-[112px] rounded-full overflow-hidden z-10">
+                    <Image
+                      src={membre.imageSrc}
+                      alt={
+                        Array.isArray(membre.nom)
+                          ? membre.nom.join(", ")
+                          : membre.nom
+                      }
+                      fill
+                      className="object-cover"
+                      priority={i < 4}
+                    />
+                  </div>
+
+                  {/* Texte circulaire (rayon = 75px) */}
+                  <div className="absolute inset-0 pointer-events-none">
+                    <SingleCircularText
+                      text={getCircularText(
+                        Array.isArray(membre.nom)
+                          ? membre.nom.join(" • ")
+                          : membre.nom
+                      )}
+                      radius={75}
+                      duration={15 + i * 3}
+                    />
+                  </div>
                 </div>
               </div>
             ))}
           </div>
-              
+
           {/* Séparateur + actions */}
           <div className="mt-8">
             <div className="rule-dots" aria-hidden="true" />
           </div>
+
           <YouTubePlayer
             videoId="Bxei_qK6ntc"
             title="Découvrez Lakmé en vidéo"
           />
+
           {/* Bouton + vidéo */}
           <div className="mt-15 flex flex-col items-center gap-6 w-full ">
             <DownloadButton href={hrefDossierPresentation}>
