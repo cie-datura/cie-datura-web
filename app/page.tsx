@@ -2,6 +2,7 @@ import ScrollButton from "./components/ScrollButton";
 import OptimizedHeroVideo from "./components/OptimizedHeroVideo";
 import Citations from "./components/Citations";
 import AboutDatura from "./components/AboutDatura";
+import CreditsButton from "./components/CreditsButton";
 
 export default function Home() {
   return (
@@ -47,6 +48,11 @@ export default function Home() {
       <section id="citations">
         <Citations />
       </section>
+
+      {/* Bouton crédits en bas à droite */}
+      <div className="flex justify-end px-6 pb-6 bg-cream">
+        <CreditsButton />
+      </div>
     </main>
   );
 }

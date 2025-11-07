@@ -28,7 +28,7 @@ export default function CreditsButton() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
-      className="w-full max-w-sm md:w-60 lg:w-58"
+      className="w-32 md:w-65"
     >
       <AnimatePresence mode="wait">
         {!isExpanded ? (
@@ -39,7 +39,7 @@ export default function CreditsButton() {
             exit={{ opacity: 0, scale: 0.8, rotate: 180 }}
             transition={{ duration: 0.5, ease: "easeInOut" }}
           >
-            <div className="relative w-full scale-90 hover:scale-95 transition-transform">
+            <div className="relative w-full scale-90 hover:scale-80 transition-transform">
               <Button
                 variant="primary"
                 onClick={toggleExpanded}
@@ -48,7 +48,7 @@ export default function CreditsButton() {
               />
               {/* Label centré */}
               <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                <span className="text-xl font-bold text-navy text-center max-w-[70%]">
+                <span className="text-md font-bold text-navy text-center max-w-[70%]">
                   Crédits
                 </span>
               </div>
@@ -62,7 +62,7 @@ export default function CreditsButton() {
             exit={{ opacity: 0, scale: 0.8, rotate: 180 }}
             transition={{ duration: 0.5, ease: "easeInOut" }}
           >
-            <div className="relative w-full scale-90 hover:scale-105 transition-transform">
+            <div className="relative w-full scale-75 hover:scale-125 transition-transform">
               {/* keep the button below the overlay but clickable */}
               <Button
                 variant="secondary"
@@ -84,12 +84,12 @@ export default function CreditsButton() {
                           href={credit.href}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-[11px] font-bold hover:underline transition-all pointer-events-auto"
+                          className="text-[10px] font-bold hover:underline transition-all pointer-events-auto"
                         >
                           {credit.name}
                         </a>
                       ) : (
-                        <span className="text-[11px] font-bold cursor-default">
+                        <span className="text-[10px] font-bold cursor-default">
                           {credit.name}
                         </span>
                       )}

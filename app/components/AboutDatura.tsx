@@ -262,8 +262,6 @@ export default function AboutDatura() {
             <DownloadButton href={hrefDossierPresentation}>
               Téléchargez notre dossier artistique
             </DownloadButton>
-            <CreditsButton />
-
           </div>
         </div>
       </section>
