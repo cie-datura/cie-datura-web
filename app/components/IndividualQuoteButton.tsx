@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import Button from "./ui/Button";
@@ -9,24 +9,24 @@ interface IndividualQuoteButtonProps {
   index: number;
 }
 
-export default function IndividualQuoteButton({ quote, index }: IndividualQuoteButtonProps) {
+export default function IndividualQuoteButton({
+  quote,
+  index,
+}: IndividualQuoteButtonProps) {
   const [isExpanded, setIsExpanded] = useState(false);
 
   const toggleExpanded = () => {
     setIsExpanded(!isExpanded);
   };
 
-  // Extraire le nom de l'auteur (avant le tiret)
-  const authorName = quote.author.split(' - ')[0];
-
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ 
-        duration: 0.5, 
+      transition={{
+        duration: 0.5,
         delay: index * 0.1,
-        ease: "easeOut" 
+        ease: "easeOut",
       }}
       className="w-full max-w-sm md:w-64 lg:w-72"
     >
@@ -47,9 +47,12 @@ export default function IndividualQuoteButton({ quote, index }: IndividualQuoteB
                 className="w-full"
               />
               {/* Texte centré par-dessus l'étoile */}
-              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                <span className="text-xl font-bold text-navy text-center max-w-[70%]">
-                  {authorName}
+              <div className="absolute inset-0 flex flex-col items-center justify-center p-4  pointer-events-none">
+                <span className="text-xl font-bold text-navy text-center max-w-[70%] mb-5">
+                  {quote.author}
+                </span>
+                <span className="text-sm font-bold text-navy text-center max-w-[70%]">
+                  {quote.role}
                 </span>
               </div>
             </div>
@@ -72,12 +75,15 @@ export default function IndividualQuoteButton({ quote, index }: IndividualQuoteB
               {/* Contenu de la citation par-dessus l'hexagone */}
               <div className="absolute inset-0 flex items-center justify-center pointer-events-none p-8">
                 <div className="text-center max-w-[90%] max-h-[90%] overflow-hidden flex flex-col justify-center">
-                  <blockquote className="text-[11px] leading-tight mb-1 text-white font-medium">
+                  <blockquote className="text-[11px] leading-tight mb-2 text-white font-medium">
                     "{quote.text}"
                   </blockquote>
                   <cite className="text-[9px] font-bold text-white not-italic">
-                    — {authorName}
+                    — {quote.author}
                   </cite>
+                  <div className="text-[8px] text-white/80 mt-1">
+                    {quote.role}
+                  </div>
                 </div>
               </div>
             </div>

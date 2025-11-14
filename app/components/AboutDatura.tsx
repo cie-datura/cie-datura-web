@@ -5,7 +5,7 @@ import { SingleCircularText } from "./ui/SingleCircularText";
 import CreditsButton from "./CreditsButton";
 
 export default function AboutDatura() {
-  const hrefDossierPresentation = "/utils/dossier-presentation.pdf";
+  const hrefDossierPresentation = "/utils/Dossier-Lakmé_Compagnie-Datura.pdf";
 
   // Mapping des noms aux textes circulaires
   const getCircularText = (nom: string) => {
