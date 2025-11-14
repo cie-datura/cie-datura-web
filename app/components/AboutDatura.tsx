@@ -1,11 +1,13 @@
+"use client";
+import { useState } from "react";
 import DownloadButton from "./DownloadButton";
 import YouTubePlayer from "./YouTubePlayer";
 import Image from "next/image";
 import { SingleCircularText } from "./ui/SingleCircularText";
-import CreditsButton from "./CreditsButton";
 
 export default function AboutDatura() {
   const hrefDossierPresentation = "/utils/Dossier-Lakmé_Compagnie-Datura.pdf";
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   // Mapping des noms aux textes circulaires
   const getCircularText = (nom: string) => {
@@ -209,7 +211,11 @@ export default function AboutDatura() {
             {production.laChefferie.map((membre, i) => (
               <div key={i} className="flex flex-col items-center">
                 {/* Boîte dimensionnée pour l’anneau de texte (diamètre = 150px) */}
-                <div className="relative w-[150px] h-[150px]">
+                <div
+                  className="relative w-[150px] h-[150px]"
+                  onMouseEnter={() => setHoveredIndex(i)}
+                  onMouseLeave={() => setHoveredIndex(null)}
+                >
                   {/* Image centrée (diamètre ~112px) */}
                   <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[112px] h-[112px] rounded-full overflow-hidden z-10">
                     <Image
@@ -235,6 +241,7 @@ export default function AboutDatura() {
                       )}
                       radius={75}
                       duration={15 + i * 3}
+                      isHovered={hoveredIndex === i}
                     />
                   </div>
                 </div>

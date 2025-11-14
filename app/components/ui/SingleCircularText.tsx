@@ -6,23 +6,24 @@ interface SingleCircularTextProps {
   radius?: number;
   duration?: number;
   className?: string;
+  isHovered?: boolean;
 }
 
 export function SingleCircularText({
   text,
   radius = 100,
   duration = 20,
-}: 
-SingleCircularTextProps) {
+  isHovered = false,
+}: SingleCircularTextProps) {
   const characters = text.split("");
 
   return (
     <motion.div
       className={`absolute inset-0`}
-      animate={{ rotate: 360 }}
+      animate={isHovered ? { rotate: 360 } : { rotate: 0 }}
       transition={{
         duration: duration,
-        repeat: Infinity,
+        repeat: isHovered ? Infinity : 0,
         ease: "linear",
       }}
     >
