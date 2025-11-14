@@ -20,7 +20,7 @@ export default function CreditsButton() {
       href: "https://www.louissanson.dev/",
     },
     { role: "Photos", name: "Fred Spark et Hervé Villieu", href: null },
-    { role: "Vidéo", name: "Frédéric Ascherfeld", href: null },
+    { role: "Vidéo", name: "Fred Spark", href: null },
   ];
 
   return (
@@ -28,7 +28,7 @@ export default function CreditsButton() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
-      className="w-32 md:w-65"
+      className="w-48 sm:w-40 md:w-48"
     >
       <AnimatePresence mode="wait">
         {!isExpanded ? (
@@ -39,7 +39,7 @@ export default function CreditsButton() {
             exit={{ opacity: 0, scale: 0.8, rotate: 180 }}
             transition={{ duration: 0.5, ease: "easeInOut" }}
           >
-            <div className="relative w-full scale-90 hover:scale-80 transition-transform">
+            <div className="relative w-full scale-100 sm:scale-90 hover:scale-95 sm:hover:scale-80 transition-transform">
               <Button
                 variant="primary"
                 onClick={toggleExpanded}
@@ -62,7 +62,7 @@ export default function CreditsButton() {
             exit={{ opacity: 0, scale: 0.8, rotate: 180 }}
             transition={{ duration: 0.5, ease: "easeInOut" }}
           >
-            <div className="relative w-full scale-75 hover:scale-125 transition-transform">
+            <div className="relative w-full scale-100 sm:scale-75 hover:scale-105 sm:hover:scale-80 transition-transform">
               {/* keep the button below the overlay but clickable */}
               <Button
                 variant="secondary"
@@ -72,11 +72,11 @@ export default function CreditsButton() {
               />
 
               {/* overlay ABOVE the button visually, but not blocking clicks */}
-              <div className="absolute inset-0 z-20 flex items-center justify-center p-6 pointer-events-none">
-                <div className="text-center max-w-[90%] max-h-[90%] overflow-hidden flex flex-col justify-center space-y-2">
+              <div className="absolute inset-0 z-20 flex items-center justify-center p-4 sm:p-6 pointer-events-none">
+                <div className="text-center max-w-[90%] max-h-[90%] overflow-y-auto flex flex-col justify-center space-y-1.5 sm:space-y-2 pointer-events-auto">
                   {credits.map((credit, index) => (
                     <div key={index} className="text-white">
-                      <div className="text-[10px] font-medium text-white/80">
+                      <div className="text-[11px] sm:text-[11px] font-medium text-white/80">
                         {credit.role} :
                       </div>
                       {credit.href ? (
@@ -84,12 +84,12 @@ export default function CreditsButton() {
                           href={credit.href}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-[10px] font-bold hover:underline transition-all pointer-events-auto"
+                          className="text-[10px] sm:text-[11px] font-bold hover:underline transition-all pointer-events-auto"
                         >
                           {credit.name}
                         </a>
                       ) : (
-                        <span className="text-[10px] font-bold cursor-default">
+                        <span className="text-[10px] sm:text-[11px] font-bold cursor-default">
                           {credit.name}
                         </span>
                       )}
