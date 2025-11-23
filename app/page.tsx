@@ -6,7 +6,7 @@ import AboutDatura from "./components/AboutDatura";
 import CreditsButton from "./components/CreditsButton";
 
 export const metadata: Metadata = {
-  title: "Accueil",
+  title: "Bienvenue sur notre site !",
   description:
     "Découvrez Lakmé, la première production de la Compagnie Datura. Un opéra accessible qui brise les clichés de l'art lyrique. Spectacle au Théâtre municipal d'Albi en mai 2025.",
 };
