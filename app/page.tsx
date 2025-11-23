@@ -1,8 +1,15 @@
+import { Metadata } from "next";
 import ScrollButton from "./components/ScrollButton";
 import OptimizedHeroVideo from "./components/OptimizedHeroVideo";
 import Citations from "./components/Citations";
 import AboutDatura from "./components/AboutDatura";
 import CreditsButton from "./components/CreditsButton";
+
+export const metadata: Metadata = {
+  title: "Accueil",
+  description:
+    "Découvrez Lakmé, la première production de la Compagnie Datura. Un opéra accessible qui brise les clichés de l'art lyrique. Spectacle au Théâtre municipal d'Albi en mai 2025.",
+};
 
 export default function Home() {
   return (
@@ -17,16 +24,16 @@ export default function Home() {
 
         {/* Titre en haut */}
         <div className="relative z-20 text-center text-white px-4 pt-20">
-          <h1 className="text-3xl md:text-5xl  animate-fade-in font-chosence">
+          <p className="text-3xl md:text-5xl animate-fade-in font-chosence">
             LA COMPAGNIE DATURA PRÉSENTE
-          </h1>
+          </p>
         </div>
 
         {/* Titre principal au centre */}
         <div className="relative z-20 text-center text-white px-4">
-          <h2 className="text-7xl md:text-8xl animate-fade-in-delay font-chosence animate-title-opera">
+          <h1 className="text-7xl md:text-8xl animate-fade-in-delay font-chosence animate-title-opera">
             LAKMÉ
-          </h2>
+          </h1>
         </div>
 
         {/* Sous-titre et bouton en bas */}
