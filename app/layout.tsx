@@ -67,7 +67,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/hero-poster.webp",
+        url: "/utils/hero-poster.webp",
         width: 1280,
         height: 720,
         alt: "Compagnie Datura - Lakmé, opéra au Théâtre d'Albi",
@@ -79,7 +79,7 @@ export const metadata: Metadata = {
     title: "Compagnie Datura - Lakmé",
     description:
       "La Compagnie Datura présente Lakmé, un opéra accessible et moderne.",
-    images: ["/hero-poster.webp"],
+    images: ["/utils/hero-poster.webp"],
     creator: "@CompagnieDatura", // Ajouter handle Twitter si vous en avez un
   },
   alternates: {
