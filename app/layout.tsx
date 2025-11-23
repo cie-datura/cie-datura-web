@@ -68,8 +68,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/hero-poster.webp",
-        width: 1920,
-        height: 1080,
+        width: 1280,
+        height: 720,
         alt: "Compagnie Datura - Lakmé, opéra au Théâtre d'Albi",
       },
     ],
@@ -80,14 +80,14 @@ export const metadata: Metadata = {
     description:
       "La Compagnie Datura présente Lakmé, un opéra accessible et moderne.",
     images: ["/hero-poster.webp"],
-    creator: "@CompagnieDatura", // Ajoutez votre handle Twitter si vous en avez un
+    creator: "@CompagnieDatura", // Ajouter handle Twitter si vous en avez un
   },
   alternates: {
     canonical: "https://www.cie-datura.fr",
   },
   verification: {
-    // Ajoutez vos codes de vérification Google Search Console, etc.
-    // google: 'votre-code-google',
+    // Ajouter codes de vérification Google Search Console, etc.
+    // google: 'code-google',
   },
 };
 
