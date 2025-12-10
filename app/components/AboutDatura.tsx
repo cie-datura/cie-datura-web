@@ -4,10 +4,14 @@ import DownloadButton from "./DownloadButton";
 import YouTubePlayer from "./YouTubePlayer";
 import Image from "next/image";
 import { SingleCircularText } from "./ui/SingleCircularText";
+import Modal from "./ui/Modal";
+import Chevrons from "./ui/Chevrons";
+import ArtistBio from "./ArtistBio";
 
 export default function AboutDatura() {
   const hrefDossierPresentation = "/utils/Dossier-Lakmé_Compagnie-Datura.pdf";
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [selectedMember, setSelectedMember] = useState<number | null>(null);
 
   // Mapping des noms aux textes circulaires
   const getCircularText = (nom: string) => {
@@ -126,12 +130,7 @@ export default function AboutDatura() {
           {/* Heading avec chevrons et paragraphe aligné */}
           <div className="mt-12">
             <div className="flex items-center gap-4">
-              <div className="chevrons" aria-hidden="true">
-                <span className="chevron" />
-                <span className="chevron" />
-                <span className="chevron" />
-                <span className="chevron" />
-              </div>
+              <Chevrons />
               <h2 className="uppercase tracking-widest text-[var(--cream)] font-semibold">
                 Origine de la compagnie
               </h2>
@@ -217,7 +216,10 @@ export default function AboutDatura() {
                   onMouseLeave={() => setHoveredIndex(null)}
                 >
                   {/* Image centrée (diamètre ~112px) */}
-                  <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[112px] h-[112px] rounded-full overflow-hidden z-10">
+                  <div
+                    className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[112px] h-[112px] rounded-full overflow-hidden z-10 cursor-pointer"
+                    onClick={() => setSelectedMember(i)}
+                  >
                     <Image
                       src={membre.imageSrc}
                       alt={
@@ -272,6 +274,32 @@ export default function AboutDatura() {
           </div>
         </div>
       </section>
+
+      {/* Modal pour afficher les détails du membre */}
+      <Modal
+        isOpen={selectedMember !== null}
+        onClose={() => setSelectedMember(null)}
+      >
+        {selectedMember !== null && (
+          <div className="text-navy">
+            <h2 className="text-3xl font-bold mb-4">
+              {Array.isArray(production.laChefferie[selectedMember].nom)
+                ? production.laChefferie[selectedMember].nom.join(" • ")
+                : production.laChefferie[selectedMember].nom}
+            </h2>
+            <p className="text-lg text-mustard font-semibold mb-6">
+              {production.laChefferie[selectedMember].rôle}
+            </p>
+            <ArtistBio
+              artistName={
+                Array.isArray(production.laChefferie[selectedMember].nom)
+                  ? production.laChefferie[selectedMember].nom[0]
+                  : production.laChefferie[selectedMember].nom
+              }
+            />
+          </div>
+        )}
+      </Modal>
     </main>
   );
 }
