@@ -1,19 +1,18 @@
 export interface Bio {
-    name: string;
+  name: string;
   text: string;
   role: string;
 }
 
 export const bio: Bio[] = [
   {
-
-name: "Timothée Hudrisier",
-text: `Timothée Hudrisier débute le piano, le violon, le chant et la danse à Albi dans le Tarn, dont il est originaire. Après les conservatoires de Toulouse et de Rueil-Malmaison, il intègre le Conservatoire National Supérieur de Musique et de Danse de Lyon dans la classe de David Selig, dont il est diplômé en 2022.
+    name: "Timothée Hudrisier",
+    text: `Timothée Hudrisier débute le piano, le violon, le chant et la danse à Albi dans le Tarn, dont il est originaire. Après les conservatoires de Toulouse et de Rueil-Malmaison, il intègre le Conservatoire National Supérieur de Musique et de Danse de Lyon dans la classe de David Selig, dont il est diplômé en 2022.
 Lors de son parcours étudiant, il fait la rencontre décisive de professeurs qui lui transmettent leur passion pour la musique de chambre, l’accompagnement vocal et l’accompagnement chorégraphique, disciplines qui le passionnent et lui permettent de multiplier les expériences professionnelles.
 Riche de l’enseignement de grandes personnalités musicales et lauréat de plusieurs concours internationaux avec le ténor Bastien Rimondi, il se produit en récital, en soliste et comme accompagnateur de la voix et de la danse, avec toujours le goût du partage, de la rencontre des arts et la curiosité pour tous les répertoires comme moteur.
 Il collabore avec l’opéra de Lyon, l’opéra de Marseille, le chœur Spirito, Les Éléments, le Centre National de la Danse, le CNSMD de Lyon… Il s’engage également en faveur de l’action culturelle et travaille régulièrement auprès des jeunes (collèges, lycées professionnels…) et des publics empêchés.
 Conscient de l’évolution du spectacle vivant et des enjeux de son époque, il fonde la Compagnie Datura pour contribuer au renouvellement du public et de l’image de l’opéra.`,
-role: "Directeur Artistique",
+    role: "Directeur Artistique",
   },
   {
     name: "Mathilde Bellin",
@@ -35,8 +34,7 @@ En 2022, elle dirige Carmen (Bizet) avec le North Czech Philharmonic Orchestra e
     name: "Alexandre Schreiber",
     text: `Intéressé d’abord par la photographie et l’image de cinéma, Alexandre se forme à l’analyse et à la pratique de l’image en études cinématographiques à l’Université Paris VII. Au détour d’une expérience dans le service lumière de l’Opéra Bastille, il découvre une nouvelle manière de créer des images en travaillant la lumière pour le spectacle vivant, et intègre alors la formation Conception lumière de l’ENSATT en 2018.
 Au cours de ces trois années, il a l’occasion de se former auprès de Paul Beaureilles pour la création de Les Châtiments mis en scène par David Lescot à l’Opéra de Dijon et auprès d’Annie Leuridant pour Au cœur de l’océan de Halory Goerger à l’Opéra de Lille. Il co-signe l’éclairage du spectacle Leurs enfants après eux, mis en scène par Simon Delétang, créé à l’ENSATT en 2021 puis repris pour la saison d’été du Théâtre du Peuple de Bussang.
-Par la suite, il travaille en tant qu’assistant de Julie-Lola Lanteri à l’Opéra de Rennes pour la création de Zaïde mis en scène par Louise Vignaud. Il conçoit la lumière pour Kaïros de Nicolas Kerszenbaum et explore avec Ariane Germain d’autres formes scéniques numériques ou immersives, notamment 62 présenté aux Subsistances (Lyon) ou l’installation Mémorandum, portée par le collectif À présent. Récemment, il travaille avec Omar Porras et Mathias Roche pour la reprise et la tournée du seul en scène Ma Colombine en Suisse. Il assiste Olivier Oudiou pour les créations Anatomie d’un suicide et Presque égal, presque frère
-mis en scène par Christophe Rauck au Théâtre des Amandiers. Il collabore également comme pupitreur avec Urs Schönebaum et Elena Gui pour la création et la tournée internationale de The Great Yes, The Great No, opéra imaginé par William Kentridge.
+Par la suite, il travaille en tant qu’assistant de Julie-Lola Lanteri à l’Opéra de Rennes pour la création de Zaïde mis en scène par Louise Vignaud. Il conçoit la lumière pour Kaïros de Nicolas Kerszenbaum et explore avec Ariane Germain d’autres formes scéniques numériques ou immersives, notamment 62 présenté aux Subsistances (Lyon) ou l’installation Mémorandum, portée par le collectif À présent. Récemment, il travaille avec Omar Porras et Mathias Roche pour la reprise et la tournée du seul en scène Ma Colombine en Suisse. Il assiste Olivier Oudiou pour les créations Anatomie d’un suicide et Presque égal, presque frère mis en scène par Christophe Rauck au Théâtre des Amandiers. Il collabore également comme pupitreur avec Urs Schönebaum et Elena Gui pour la création et la tournée internationale de The Great Yes, The Great No, opéra imaginé par William Kentridge.
 Pour le Festival d’Aix-en-Provence, il travaille avec James F. Ingalls pour The Nine Jewelled Deer présenté en 2025, et collaborera avec Sylvain Verdet pour une nouvelle production de La Flûte enchantée mise en scène par Clément Cogitore en 2026 au Théâtre de l’Archevêché.`,
     role: "Créateur Lumières",
   },
@@ -44,17 +42,17 @@ Pour le Festival d’Aix-en-Provence, il travaille avec James F. Ingalls pour Th
     name: "Rachel Testard",
     text: `Rachel Testard est scénographe, constructrice et décoratrice pour le spectacle vivant. Elle considère son métier tout aussi technique qu’artistique et elle prend du plaisir à suivre ses projets de leur conception jusqu’à leur réalisation dans un rapport tactile à la matière.
 Rachel Testard est née en 1994 à Paris. Elle passe une grande partie de son enfance et adolescence en Asie : au Japon, en Chine et à Singapour. Après une licence d’architecture à l’Université de Bath au Royaume-Uni et une année où elle exerce à l’agence Harry Gugger Studio à Bâle, Rachel Testard se tourne vers la scénographie.
-Elle suit la formation du Laboratoire d’Etude du Mouvement (LEM) à l’Ecole Jacques Lecoq à Paris, où elle développe une pratique d’improvisation corporelle associée à la fabrication de structures et de masques en atelier. Elle intègre le département de scénographie de l’Ecole Nationale Supérieure des Arts et Techniques du Théâtre en 2018. Depuis sa sortie d’école en 2021, Rachel conçoit et construit des décors pour le théâtre, la danse et l'opéra notamment pour la cie Le Chat du Désert, la cie Candolle, la cie Neuve, la cie Continuum, la cie Maintenant ou jamais et la cie Datura.
+Elle suit la formation du Laboratoire d’Etude du Mouvement (LEM) à l’Ecole Jacques Lecoq à Paris, où elle développe une pratique d’improvisation corporelle associée à la fabrication de structures et de masques en atelier. Elle intègre le département de scénographie de l’Ecole Nationale Supérieure des Arts et Techniques du Théâtre en 2018. 
+Depuis sa sortie d’école en 2021, Rachel conçoit et construit des décors pour le théâtre, la danse et l'opéra notamment pour la cie Le Chat du Désert, la cie Candolle, la cie Neuve, la cie Continuum, la cie Maintenant ou jamais et la cie Datura.
 En parallèle de son activité de scénographe et constructrice, elle participe à des laboratoires de recherche artistique pluridisciplinaire.`,
     role: "Scénographe",
   },
   {
     name: "Carmen Espérou",
-    text: `Née en 1993 à Albi, Carmen Esperou embrasse le monde de la mode après un baccalauréat option arts appliqués. Elle intègre l’école de design de la mode Esimode de Toulouse, dans laquelle sa passion et sa créativité sont remarquées. Elle est sélectionnée pour le concours « Talon aiguille » et présente à cette occasion son travail à Cristian Lacroix. Dans la foulée, elle devient apprentie tailleuse à l’Institut de Métier d’Excellence LVMH pour la maison Loewe. Elle y poursuit son apprentissage pendant deux ans au sein de l’atelier parisien
-de création, et obtient son diplôme de tailleur ainsi qu’un diplôme d’excellence de la part de LVMH. Dès lors, elle travaille sur les défilés des plus grandes maisons de couture : Jacquemus, Loewe, Yves Saint Laurent, Acne Studios… Elle travaille ensuite chez Isabel Marant comme couturière.
+    text: `Née en 1993 à Albi, Carmen Esperou embrasse le monde de la mode après un baccalauréat option arts appliqués. Elle intègre l’école de design de la mode Esimode de Toulouse, dans laquelle sa passion et sa créativité sont remarquées. Elle est sélectionnée pour le concours « Talon aiguille » et présente à cette occasion son travail à Christian Lacroix. Dans la foulée, elle devient apprentie tailleuse à l’Institut de Métier d’Excellence LVMH pour la maison Loewe. Elle y poursuit son apprentissage pendant deux ans au sein de l’atelier parisien de création, et obtient son diplôme de tailleur ainsi qu’un diplôme d’excellence de la part de LVMH. Dès lors, elle travaille sur les défilés des plus grandes maisons de couture : Jacquemus, Loewe, Yves Saint Laurent, Acne Studios… Elle travaille ensuite chez Isabel Marant comme couturière.
 En 2020 elle s'installe en Italie et avec l'envie de retourner à la création, fondera sa propre marque. Elle travaille en particulier avec des matières revalorisées avec l’intention de se tourner vers une mode plus responsable.
 En 2021 elle est repérée par le Groupe Florence et commence à travailler à Parme au sein d'un atelier qui développe des produits qui vont du prêt-à-porter au sur-mesure et très haut de gamme pour des clients VIP et marques de luxe du monde entier.
-Pour le projet Lakmé elle travaille en étroite collaboration avec Frank Gizycki, et Rachel Testard pour élaborer des costumes parfaitement intégrés au décors ainsi qu’aux chorégraphies. Plus que les vêtements des personnages, ils sont aussi de véritables accessoires et jouent un rôle central dans la mise en scène, grâce aux échanges constants avec le reste de l’équipe artistique.`,
+Pour le projet Lakmé, elle travaille main dans la main avec Frank Gizycki et Rachel Testard pour imaginer des costumes en parfaite harmonie avec le décor et les chorégraphies. Pensés comme de véritables accessoires, ils occupent une place essentielle dans la mise en scène.`,
     role: "Costumière",
   },
   {
